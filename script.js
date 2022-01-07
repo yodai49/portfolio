@@ -1,11 +1,9 @@
-var t = 0; //time
-var mode = 0; //mode 0タイトル画面　1セレクト画面　2プレイ画面　3リザルト画面　
 var animationmax = 1; //nextmodeにうつるタイミング
 var animationcnt=0; //アニメーションのカウンター 1でスタート -1処理前
-var nextmode=0; //次にうつるモード
+var lastPerformance=performance.now(); //パフォーマンス
+var t = 0; //開いてからの経過時間
 
 // ページの読み込みを待つ
-
 
 function keypress(mykey,mykeycode){ //キー入力イベント
     if(mykey=="z"){
