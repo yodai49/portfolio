@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding:0;
+}
+.backImg{
+    width:100vw;
+    height:100vh;
+}
+.homeTxt{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    display:block;
+}
+.titleContainer{
+/*    background:url("./imgs/backImg.jpg") center/cover;*/
+    background-color:rgba(220,220,220,1);
+    width:100vw;
+    min-height:100vh;
+    position:relative;
+}
+.wrapper{
+    width:100vw;
+    height:100vh;
+}
