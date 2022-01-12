@@ -5,7 +5,7 @@ var t = 0; //開いてからの経過時間
 
 // ページの読み込みを待つ
 
-function keypress(mykey,mykeycode){ //キー入力イベント
+function keypress(mykey,mykeycode){ //キー入力イベント..
     if(mykey=="z"){
         window.alert("z");
     }
