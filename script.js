@@ -9,7 +9,7 @@ const MONOS_FONTNAME="Red Hat Mono, monospace";
 const SS_FONTNAME="Spartan, sans-serif";
 const CUR_FONTNAME="Poiret One, cursive";
 var canvasWidth,canavasHeight;
-var inputChar;
+var mouseX=0,mouseY=0,prevMouseX=0,prevMouseY=0;
 var balls=[{posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0},
     {posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0},
     {posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0},
@@ -30,12 +30,19 @@ window.addEventListener('DOMContentLoaded', function(){ ///キー入力イベン
       keypress(e.key,e.keyCode);
     });
 });
+window.addEventListener('mousemove', function (e) { //マウスが動いた時
+    var rect = e.target.getBoundingClientRect();
+	mouseX = e.clientX;
+	mouseY = e.clientY;
+
+}, false);
 
 function init() {
     //ローディング処理////////////////////////////////////////
 
     //2Dの処理
     ctx2d=document.getElementById("myCanvas").getContext("2d");
+    fadein2d=document.getElementById("fadeinCanvas").getContext("2d");
     for(var i = 0;i < 10;i++){
         let tempArg=Math.random()*Math.PI*2;
         balls[i]["size"]=Math.random()*50+20;
@@ -48,13 +55,17 @@ function init() {
     tick();
 
     function tick() {
+        var inputChar;
         t=(performance.now()-INIT_TIME)/1000;//システム系の処理
         //リセット処理
         document.getElementById("myCanvas").width=document.getElementById("wrapper").scrollWidth;
         document.getElementById("myCanvas").height=document.getElementById("wrapper").scrollHeight;
+        document.getElementById("fadeinCanvas").width=document.getElementById("wrapper").scrollWidth;
+        document.getElementById("fadeinCanvas").height=document.getElementById("wrapper").scrollHeight;
         canvasWidth=document.getElementById("myCanvas").width;
         canvasHeight=document.getElementById("myCanvas").height;
         ctx2d.clearRect(0,0,ctx2d.width,ctx2d.height);
+        fadein2d.clearRect(0,0,fadein2d.width,fadein2d.height);
 
         ctx2d.fillStyle="rgba(228,220,209,0.3)";
         ctx2d.fillRect(0,0,canvasWidth/2,canvasHeight);
@@ -86,7 +97,7 @@ function init() {
         ctx2d.font=FONT_SIZE + "px "+ CUR_FONTNAME;
         ctx2d.textBaseline = "top";
 
-        ctx2d.fillStyle="rgba(181,135,100,1)";
+        ctx2d.fillStyle="rgba(201,135,100,1)";
         const TITLE_MSG_SEC=3;
         var showMsgNum=Math.floor(t/TITLE_MSG_SEC)%TITLE_TEXT.length;
         var titleTextPosLeft=50;
@@ -102,6 +113,23 @@ function init() {
 //            ctx2d.fillText(drawTxt,titleTextPosLeft,(i+0.1)*Math.min(document.getElementById("myCanvas").height,600)/3.1);
             ctx2d.fillText(drawTxt,titleTextPosLeft,(0.1+i)*FONT_SIZE);
         }
+//Mouse Cursor
+        prevMouseX=(2*prevMouseX+mouseX)/3;
+        prevMouseY=(2*prevMouseY+mouseY)/3;
+        /*
+        ctx2d.fillStyle="rgba(0,0,0,"+(0.0+0.0* Math.sin(t*10))+")";
+        ctx2d.beginPath();
+        ctx2d.arc(mouseX,mouseY,30,0,Math.PI*2);
+        ctx2d.fill();
+        ctx2d.fillStyle="rgba(255,0,0,"+(0.4+0.3* Math.sin(t*10))+")";
+        ctx2d.beginPath();
+        ctx2d.arc(prevMouseX,prevMouseY,30,0,Math.PI*2);
+        ctx2d.fill();*/
+
+        fadein2d.fillStyle="rgba(0,0,0,"+ Math.max(0,1-t)+")";
+        fadein2d.fillRect(0,0,canvasWidth,canvasHeight);
+        if(t>1) document.getElementById("fadeinCanvas").style.zIndex=-1;
+
         requestAnimationFrame(tick);
     }
 }
