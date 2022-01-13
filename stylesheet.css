@@ -1,0 +1,141 @@
+*{
+    margin: 0;
+    padding:0;
+}
+.backImg{
+    width:100vw;
+    height:100vh;
+}
+.homeTxt{
+    width:100vw;
+    height:100vh;
+    position:relative;
+    display:block;
+    z-index:0;
+    transition:all 0.3s;
+}
+.titleContainer{
+    background:url("./imgs/backImg.jpg") center/cover;
+    width:100vw;
+    min-height:100vh;
+    position:relative;
+}
+.wrapper{
+    width:100vw;
+    height:100vh;
+}
+.copyright{
+    text-align:center;
+    color:rgba(255,255,255,1);
+    font-family:'Spartan',monospace;
+    padding:10px;
+}
+.button-wrapper{
+    width:24vh;
+    position:absolute;
+    z-index:1;
+    top:0;
+    right:0;
+    transition:all 0.3s;
+}
+.buttons{
+    position:absolute;
+    text-align:center;
+    width:12vh;
+    height:12vh;
+    right:0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;    
+    color:rgba(255,255,255,1);
+    font-family:'Poiret One',cursive;
+    font-size:3vh;
+    letter-spacing:3px;
+    transition:all 0.3s;
+    box-shadow:2px 2px 4px rgba(0,0,0,1);
+}
+.buttons:hover{
+    width:24vh;
+}
+.button-1{
+    background-color:rgba(179,175,145,0.8);
+    top:2px;
+}
+.button-2{
+    background-color:rgba(166,166,166,0.8);
+    top:16vh;
+}
+.button-3{
+    background-color:rgba(116,113,88,0.8);
+    top:30vh;
+}
+.button-4{
+    background-color:rgba(89,89,89,0.8);
+    top:44vh;
+}
+.buttons:hover .bt-normal{
+    display:none;
+}
+.buttons:hover .bt-mobile{
+    display:none;
+}
+.bt-mobile{
+    display:none;
+}
+@media (max-width:1020px) {
+	.bt-mobile {
+		display: flex;
+        font-size:55%;
+        position:absolute;
+        transition:all 0.3s;
+	}
+    .bt-normal{
+        display:none;
+    }
+    .buttons{
+        width:30%;
+        height:20%;
+        position:absolute;
+        box-shadow:2px 2px 4px rgba(0,0,0,0);
+    }
+    .buttons:hover{
+        width:30%;
+    }
+    .button-wrapper{
+        background-color:rgba(0,0,0,0);
+        position:absolute;
+        z-index:1;
+        bottom:0vh;
+        top:55vh;
+        right:0;
+        left:0;
+        width:70vw;
+        height:40vh;
+        margin:auto;
+    }
+    .button-1{
+        top:28%;
+        left:18%;
+    }
+    .button-2{
+        top:52%;
+        left:18%;
+    }
+    .button-3{
+        top:28%;
+        left:52%;
+    }
+    .button-4{
+        top:52%;
+        left:52%;
+    }
+}
+.bt-hov{
+    display:none;
+}
+.buttons:hover .bt-hov{
+    display:flex;
+}
+a{
+    text-decoration-line:none;
+}
