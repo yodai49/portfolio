@@ -60,37 +60,38 @@ a{
     background-color:#000000;
 }
 .dammy-header{
-    height:20mm;
+    height:7vh;
+    min-height:20mm;
 }
 .header{
     background-color:rgba(56,53,51,0.93);
     top:0;
-    left:0;
     position:fixed;
     margin:0;
     z-index:10;
     color:white;
     z-index:5;
     text-align:center;
-    height:20mm;
+    height:7vh;
+    min-height:20mm;
     width:100%;
 }
 .header-txt{
     font-family:'Spartan',monospace;
-    font-size:8mm;
-    top:6mm;
-    left:20px;
-    position:fixed;
+    font-size:max(3vh,8mm);
+    line-height:max(7vh,20mm);
+    vertical-align:middle;
+    left:5mm;
+    position:absolute;
+}
+.header-txt:hover{
+    color:#aaa;
 }
 a .header{
     margin-left:20px;
 }
 a{
     color:#ffffff;
-    transition: all 0.3s;
-}
-a:hover{
-    color:#dddddd;
     transition: all 0.3s;
 }
 .header-button-pc{
@@ -123,6 +124,9 @@ a:hover{
     right:4mm;
     background-color:rgba(89,89,89,0.8);
 }
+.header-button-sp{
+    display:none;
+}
 
 .hb-normal{
     display:inline;
@@ -137,6 +141,7 @@ a:hover{
     display:inline;
     padding-left:4mm;
     letter-spacing:5px;
+    color:#ccc;
 }
 .header-button-pc:hover {
     position:fixed;
@@ -151,10 +156,10 @@ a:hover{
     position:absolute;
     top:20px;
     right:10mm;
-    z-index:-1;
+    z-index:-200;
 }
 h1{
-    font-size:20mm;
+    font-size:min(10vw,25mm);
     padding:30px;
     text-align:center;
     position:relative;
@@ -226,17 +231,15 @@ margin:10px;
     text-align:center;
 }
 .works_pic{
-    width:30vw;
-    min-width:360px;
+    width:32vw;
+    min-width:420px;
     position:absolute;
     top:0;
     right:50vw;
     display:inline-block;
 }
 .works_pic:hover{
-    width:32vw;
-    right:49vw;
-    top:-0.5vw;
+    filter:brightness(50%);
 }
 .works_txt{
     display:inline-block;
@@ -248,7 +251,7 @@ margin:10px;
 .each_works:after{
     content:"";
     display:block;
-    padding-top:25%;
+    padding-top:max(28%,300px);
     padding-bottom:0;
 }
 .each_works{
@@ -266,6 +269,7 @@ margin:10px;
     border-left-color:#000000;
     border-left-width:3px;
     border-left-style:solid;
+    font-size:16px;
  }
  .tag {
     background-color:#D4C6A8;
@@ -275,6 +279,7 @@ margin:10px;
     margin-right:2mm;
     border-left: solid 6px #8F581F;
     white-space:nowrap;
+    font-size:10px;
 }
 .year{
     color:#999999;
@@ -292,9 +297,6 @@ margin:10px;
     .mypic{
         width:80vw;
         height:80vw;
-    }
-    .h1{
-        font-size:80px;
     }
     .works_pic{
         margin:auto;
@@ -320,8 +322,13 @@ margin:10px;
         background-color:rgba(0,0,0,0.85);
         color:rgba(255,255,255,1);
         width:calc(80vw - 10mm);
-        font-size:6mm;
         display:block;
+    }
+    .works-dtl{
+        font-size:max(1.5vw,6mm);
+    }
+    .works-title{
+        font-size:6vw;
     }
     .each_works:after{
         padding-top:0;
@@ -337,12 +344,107 @@ margin:10px;
     }
     .h2{
         padding-left:50mm;
-        font-size:10mm;
+        font-size:24px;
     }
     h2::before{
         background-color:#ffffff;
     }
+    .before-black:before{
+        background-color:#000000;
+    }
     .tag{
         color:#000;
     }
+    .header-button-pc{
+        display:none;
+    }
+    .header-button-sp{
+        display:inline-block;
+        position:absolute;
+        right:2vw;
+        width:max(4vh,16mm);
+        height:max(4vh,16mm);
+        line-height:max(4vh,12mm);
+    }
+    .menu-btn {
+        position: fixed; /* header max(7vh,20mm) */
+        right:5mm;
+        display: flex;
+        top:max(0.5vh,3mm);
+        width:max(6vh,8mm);
+        height:max(6vh,8mm);
+        justify-content: center;
+        align-items: center;
+        z-index: 120;
+    }
+    .menu-btn span,
+    .menu-btn span:before,
+    .menu-btn span:after {
+        content: '';
+        display: block;
+        height: max(0.3vh,0.5mm);
+        width:max(4vh,8mm);
+        border-radius: 0px;
+        background-color: #ffffff;
+        position: absolute;
+        transition:all 0.3s;
+    }
+    .menu-btn span:before {
+        bottom: max(1.8vh,2.2mm);
+    }
+    .menu-btn span:after {
+        top: max(1.8vh,2.2mm);
+    }
+    #menu-btn-check {
+        display: none;
+    }
+    .menu-content {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 100%;
+        z-index: 110;
+        background-color: rgba(0,0,0,0);
+    }
+    #menu-btn-check:checked ~ .menu-content {
+        left: 0;
+        background-color: rgba(0,0,0,1);
+    }
+    #menu-btn-check:checked ~ .menu-btn span {
+        background-color: rgba(255, 255, 255, 0);/*メニューオープン時は真ん中の線を透明にする*/
+    }
+    #menu-btn-check:checked ~ .menu-btn span::before {
+        bottom: 0;
+        transform: rotate(45deg);
+    }
+    #menu-btn-check:checked ~ .menu-btn span::after {
+        top: 0;
+        transform: rotate(-45deg);
+    }
+    .menu-link{
+        color:#ddd;
+        font-size:3vh;
+        left:0;
+        right:0;
+        margin:auto;
+        position:absolute;
+    }
+    .menu-link:hover{
+        color:#D4C6A8;
+        font-size:4vh;
+    }
+    .menu-link-1{
+        top:35vh;
+    }    
+    .menu-link-2{
+        top:45vh;
+    }
+    .menu-link-3{
+        top:55vh;
+    }
+    .menu-link-4{
+        top:65vh;
+    }
+
  } 
