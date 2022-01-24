@@ -6,7 +6,7 @@
 body{
     background-color:rgba(242,242,242,1);
     font-family:'Spartan',monospace;
-    font-size:14px;
+    font-size:max(4mm,1.2vw);
 }
 .wrapper{
     width:100%;
@@ -23,10 +23,10 @@ body{
     background-color:rgba(30,30,30,1);
     color:rgba(255,255,255,1);
     font-family:'Spartan',monospace;
-    font-size:10px;
+    font-size:1.5vh;
     padding:0px;
-    padding-top:10px;
-    padding-bottom:10px;
+    padding-top:20px;
+    padding-bottom:20px;
     margin:0;
     width:100%;
     position:absolute;
@@ -78,15 +78,25 @@ a{
     box-shadow:0px 3px 4px rgba(0,0,0,0.5);
 }
 .header-txt{
-    font-family:'Red hat Mono',monospace;
-    font-size:max(3vh,8mm);
+    font-family:'Poiret One',cursive;
+    font-size:max(3vh,4mm);
     line-height:max(7vh,20mm);
     vertical-align:middle;
-    left:5mm;
+    left:max(20mm,6vh);
     position:absolute;
 }
 .header-txt:hover{
     color:#aaa;
+}
+.header-icon{
+    position:fixed;
+    height:5vh;
+    top:max(1vh,3mm);
+    left:max(1vh,3mm);
+    min-height:14mm;
+}
+.header-icon:hover{
+    filter:brightness(90%);
 }
 a .header{
     margin-left:20px;
@@ -134,22 +144,53 @@ a{
 }
 .hb-hover{
     display:none;
+    transform:rotate(90deg);
+    transform-origin:60px 60px;
+}
+.header-hov{
+    background-color:#000;
+    width:32mm;
+    position:fixed;
 }
 .header-button-pc:hover .hb-normal{
     display:none;
 }
 .header-button-pc:hover .hb-hover{
-    display:inline;
+    display:inline-block;
     padding-left:4mm;
     letter-spacing:5px;
-    color:#ccc;
+    margin-left:-75px;
+    color:#fff;
+    transform:rotate(90deg);
+    transform-origin:60px 60px;
+    transition:all 0.3s;
 }
 .header-button-pc:hover {
     position:fixed;
     text-align:left;
+    height:32mm;
+}
+.header-nm-button-pc{
+    height:12mm;
+    position:fixed;
+    display:inline;
+    text-align:left;
     width:32mm;
     transform:rotate(90deg);
     transform-origin:60px 60px;
+    z-index:90;
+    top:4mm;
+    color:rgba(255,255,255,1);
+    font-size:4mm;
+    line-height:12mm;
+    vertical-align: middle;
+    font-family:'Poiret One',cursive;
+    box-shadow:2px 2px 4px rgba(0,0,0,0.3);
+    transition:all 0.3s;
+}
+.hb-nm-normal{
+    padding-left:4mm;
+    letter-spacing:5px;
 }
 .hugeA{
     height:80vh;
@@ -160,23 +201,20 @@ a{
     z-index:-200;
 }
 h1{
-    font-size:min(10vw,25mm);
+    font-size:min(20mm,7vw);
     padding:30px;
+    padding-top:60px;
+    padding-bottom:60px;
+    left:0;
+    right:0;
+    margin:auto;
     text-align:center;
     position:relative;
-    display:flex;
     align-items:center;
 }
-h1::before,
-h1::after{
-    content:"";
-    height:2px;
-    background-color:#000000;
-    flex-grow:1;
-    margin:1rem;
-}
+
 h2{
-    font-size:10mm;
+    font-size:3.5vw;
     position:relative;
     margin-bottom:3mm;
 }
@@ -189,27 +227,80 @@ h2::before{
     bottom:-2px;
     left:0px;
  }
- 
+h3{
+    font-size:3vw;
+    padding-bottom:10px;
+    padding-top:50px;
+    text-align:center;
+}
  .about-contents{
     width:100%;
     position:relative;
  }
 
  .mypic{
-    width:30vw;
-    height:30vw;
+    width:max(400px,30vw);
+    height:max(400px,30vw);
     margin-left:10vw;
     margin-bottom:50px;
     vertical-align: top;
  }
  .career{
     color:rgba(0,0,0,1);
-    width:50vw;
+    width:48vw;
     height:30vw; 
-    margin-left:50px;
+    margin-left:8px;
     display:inline-block;
     vertical-align: top;
  }
+ .career_typing{
+    color:rgba(0,0,0,1);
+    width:70vw;
+    margin-left:15vw;
+    display:inline-block;
+    vertical-align: top; }
+ .career_typing-dtl{
+     margin:30px;
+     border-left-color:#000000;
+     border-left-width:3px;
+     border-left-style:solid;
+     padding-left:10px; 
+ }
+ .career_table{
+    text-align:left;
+    margin-bottom:30px;
+    margin-left:15px;
+ }
+ .career_table th{
+     padding-right:20px;
+     padding-bottom:10px;
+ }
+ .career_table td{
+     padding-bottom:10px;
+ }
+ .career_table_jpn td{
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+ }
+.typing_score_table td{
+    border-bottom: solid 2px #aaaaaa;
+    padding-left:5px;
+}
+.typing_score_table th{
+    border-bottom: solid 2px #000000;
+}
+.typing_score_table{
+    table-layout: fixed;
+    width:60vw;
+    left:0;
+    right:0;
+    margin:auto;
+    padding:0;
+    text-align:center;
+    font-family: 'Zen Kaku Gothic Antique', sans-serif;
+}
+.typing_table_small{
+    font-size:max(0.8vw,2.8mm);
+}
  .career-dtl{
     margin:25px;
     margin-bottom:30px;
@@ -225,18 +316,18 @@ h2::before{
 margin:10px;
 }
 .contact{
-    width:80vw;
-    height:auto;
-    margin-left:10vw;
+    width:100%;
+    position:relative;
+    height:100px;
     margin-bottom:50px;
     text-align:center;
 }
 .works_pic{
-    width:32vw;
-    min-width:420px;
+    width:38vw;
+    min-width:480px;
     position:absolute;
     top:0;
-    right:50vw;
+    right:47vw;
     display:inline-block;
 }
 .works_pic:hover{
@@ -244,7 +335,7 @@ margin:10px;
 }
 .works_txt{
     display:inline-block;
-    width:40vw;
+    width:45vw;
     left:50%;
     position:absolute;
     top:0;
@@ -266,6 +357,47 @@ margin:10px;
     padding:0;
     position:relative;
 }
+.each_songs:after{
+    content:"";
+    display:block;
+    padding-bottom:0;
+}
+.each_songs{
+    width:90vw;
+    left:0;
+    right:0;
+    margin:auto;
+    padding:0;
+    position:relative;
+}
+.vertical_border{
+    display:block;
+    width:100%;
+    margin-bottom:18%;
+}
+.vertical_border:after{
+    content:"";
+    background-color:#000;
+    width:1px;
+    height:8%;
+    left:50%;
+    margin-top:2%;
+    position:absolute;
+}
+.vertical_border2{
+    display:block;
+    width:100%;
+    margin-bottom:12%;
+}
+.vertical_border2:after{
+    content:"";
+    background-color:#000;
+    width:1px;
+    height:12%;
+    left:50%;
+    position:absolute;
+}
+
 .works-dtl{
     margin:25px;
     margin-bottom:30px;
@@ -273,7 +405,6 @@ margin:10px;
     border-left-color:#000000;
     border-left-width:3px;
     border-left-style:solid;
-    font-size:16px;
  }
  .tag {
     background-color:#D4C6A8;
@@ -290,7 +421,19 @@ margin:10px;
     font-size:3mm;
     margin:2mm;
 }
+.iframe-songs{
+    padding-left:5%;
+}
  @media (max-width:1020px) { /* For smartphone*/
+    h1{
+        font-size:15vw;
+    }
+    h2{
+        font-size:9vw;
+    }
+    h2{
+        font-size:7vw;
+    }
     .career{
         width:80vw;
         height:auto;
@@ -308,6 +451,8 @@ margin:10px;
         right:0;
         position:auto;
         width:100vw;
+        margin:0;
+        padding:0;
         margin-top:2vw;
         display:block;
         position:relative;
@@ -327,12 +472,15 @@ margin:10px;
         color:rgba(255,255,255,1);
         width:calc(100vw - 10mm);
         display:block;
+        margin-bottom:5vh;
+        margin-top:-10px;
+    }
+    .iframe-songs{
+        padding:0;
+        margin:0;
     }
     .works-dtl{
-        font-size:max(1.5vw,6mm);
-    }
-    .works-title{
-        font-size:6vw;
+        font-size:2vw;
     }
     .each_works:after{
         padding-top:0;
@@ -342,6 +490,12 @@ margin:10px;
         height:auto;
         position:relative;
         display:block;
+    }
+    .vertical_border{
+        display:none;
+    }
+    .vertical_border2{
+        display:none;
     }
     .works-dtl{
         border-left-color:#ffffff;
@@ -353,11 +507,18 @@ margin:10px;
     h2::before{
         background-color:#ffffff;
     }
+    .non-white:before{
+        background-color:#000000;
+    }
     .before-black:before{
         background-color:#000000;
     }
     .tag{
         color:#000;
+        font-size:2.8vw;
+    }
+    .year{
+        font-size:2vw;
     }
     .header-button-pc{
         display:none;
@@ -375,11 +536,14 @@ margin:10px;
         right:0;
         margin:auto;
     }    
+    .header-nm-button-pc{
+        display:none;
+    }
     .menu-btn {
         position: fixed; /* header max(7vh,20mm) */
         right:5mm;
         display: flex;
-        top:max(0.5vh,3mm);
+        top:max(0.5vh,4mm);
         width:max(6vh,8mm);
         height:max(6vh,8mm);
         justify-content: center;
@@ -455,5 +619,19 @@ margin:10px;
     .menu-link-4{
         top:65vh;
     }
-
+    .iframe-songs{
+        width:100vw;
+        padding-left:0;
+        margin-left:0;
+        left:0;
+        height:60vw;
+    }
+    .each_songs{
+        margin:0;
+        width:100%;
+        padding:0;
+    }
+    .each_songs:after{
+        height:0;
+    }
  } 
