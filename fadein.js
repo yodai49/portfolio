@@ -1,11 +1,11 @@
 var animationmax = 1; //nextmodeにうつるタイミング
-var INIT_TIME_ORD=performance.now(); //パフォーマンス
+var INIT_TIME_ORD=performance.now()*2; //パフォーマンス
 var t = 0; //開いてからの経過時間 ミリ秒
 var canvasWidth,canavasHeight;
 var mouseX=0,mouseY=0,prevMouseX=0,prevMouseY=0;
 
 window.addEventListener('load', init); //ロードイベント登録
-window.addEventListener('DOMContentLoaded', function(){ ///キー入力イベント登録
+window.addEventListener('DOMContentLoaded', function(){
     document.getElementById("fadeinCanvas").style.zIndex=100;
 });
 window.addEventListener('mousemove', function (e) { //マウスが動いた時
@@ -15,10 +15,9 @@ window.addEventListener('mousemove', function (e) { //マウスが動いた時
 
 }, false);
 
-
 function init() {
     //ローディング処理////////////////////////////////////////
-
+    INIT_TIME_ORD=performance.now()
     //2Dの処理
     fadein2d=document.getElementById("fadeinCanvas").getContext("2d");
     tick();

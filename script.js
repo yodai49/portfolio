@@ -3,7 +3,7 @@ var animationcnt=0; //アニメーションのカウンター 1でスタート -
 var lastPerformance=performance.now(); //パフォーマンス
 var t = 0; //開いてからの経過時間 ミリ秒
 const INIT_TIME=performance.now();
-const TITLE_TEXT=[["WHAT'S","YOUR", "FAVORITE?"]]
+const TITLE_TEXT=[["HI.","THIS IS", "TORUTHI."]]
 const TITLE_MAX_LENGTH = 7;
 const MONOS_FONTNAME="Red Hat Mono, monospace";
 const SS_FONTNAME="Spartan, sans-serif";
@@ -105,6 +105,7 @@ function init() {
         fadein2d.fillStyle="rgba(0,0,0,"+ Math.max(0,1-t)+")";
         fadein2d.fillRect(0,0,canvasWidth,canvasHeight);
         if(t>1) document.getElementById("fadeinCanvas").style.zIndex=-1;
+        document.getElementById("dammy-fadein").style.display="none";
 
         requestAnimationFrame(tick);
     }
