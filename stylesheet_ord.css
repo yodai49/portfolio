@@ -211,12 +211,16 @@ h1{
     text-align:center;
     position:relative;
     align-items:center;
+    font-family:'Poiret One',cursive;
+    letter-spacing:10px;
 }
 
 h2{
     font-size:3.5vw;
     position:relative;
     margin-bottom:3mm;
+    font-family:'Poiret One',cursive;
+    letter-spacing:8px;
 }
 h2::before{
     content:"";
@@ -232,6 +236,8 @@ h3{
     padding-bottom:10px;
     padding-top:50px;
     text-align:center;
+    font-family:'Poiret One',cursive;
+    letter-spacing:5px;
 }
  .about-contents{
     width:100%;
@@ -258,7 +264,8 @@ h3{
     width:70vw;
     margin-left:15vw;
     display:inline-block;
-    vertical-align: top; }
+    vertical-align: top; 
+}
  .career_typing-dtl{
      margin:30px;
      border-left-color:#000000;
@@ -294,7 +301,7 @@ h3{
     left:0;
     right:0;
     margin:auto;
-    padding:0;
+    padding-bottom:60px;
     text-align:center;
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
 }
@@ -314,13 +321,6 @@ h3{
 }
 .career-text{
 margin:10px;
-}
-.contact{
-    width:100%;
-    position:relative;
-    height:100px;
-    margin-bottom:50px;
-    text-align:center;
 }
 .works_pic{
     width:38vw;
@@ -373,27 +373,28 @@ margin:10px;
 .vertical_border{
     display:block;
     width:100%;
-    margin-bottom:18%;
+    margin-bottom:300px;
 }
 .vertical_border:after{
     content:"";
     background-color:#000;
     width:1px;
-    height:8%;
+    height:240px;
     left:50%;
-    margin-top:2%;
+    margin-top:30px;
     position:absolute;
 }
 .vertical_border2{
     display:block;
     width:100%;
-    margin-bottom:12%;
+    margin-bottom:200px;
 }
 .vertical_border2:after{
     content:"";
     background-color:#000;
     width:1px;
-    height:12%;
+    height:160px;
+    margin-top:20px;
     left:50%;
     position:absolute;
 }
@@ -424,26 +425,52 @@ margin:10px;
 .iframe-songs{
     padding-left:5%;
 }
+.txt-center{
+    text-align:center;
+    margin-left:8px;
+    display:inline-block;
+    vertical-align: top;
+    width:100%;
+    padding-bottom:100px;
+}
  @media (max-width:1020px) { /* For smartphone*/
     h1{
-        font-size:15vw;
+        font-size:max(24mm,12vw);
     }
     h2{
-        font-size:9vw;
+        font-size:max(15.2mm,9vw);
     }
-    h2{
-        font-size:7vw;
+    h3{
+        font-size:max(11.6mm,6vw);
+    }
+    body{
+        font-size:max(3.6mm,1.5vw);
+    }
+    .contact{
+        height:auto;
+        font-size:max(3.6mm,1.5vw);
     }
     .career{
-        width:80vw;
+        width:90vw;
         height:auto;
-        margin-left:10vw;
         vertical-align: top;
         position:relative;
-    }   
+    }
+    .txt-center{
+        width:90vw;
+        height:auto;
+        vertical-align: top;
+        position:relative;
+    }
+    .career-text{
+        width:90vw;
+        height:auto;
+        margin-left:5vw;
+    }
     .mypic{
-        width:80vw;
-        height:80vw;
+        width:50vw;
+        height:50vw;
+        margin-left:25vw;
     }
     .works_pic{
         margin:auto;
@@ -475,6 +502,53 @@ margin:10px;
         margin-bottom:5vh;
         margin-top:-10px;
     }
+    .career_typing{
+        color:rgba(0,0,0,1);
+        width:90vw;
+        margin:0;
+        display:inline-block;
+        vertical-align: top; 
+        font-size:2rem;
+    }
+    .career_table{
+        text-align:left;
+        margin-bottom:30px;
+        margin-left:15px;
+        font-size:20px;
+     }
+     .career_table th{
+         padding-right:20px;
+         padding-bottom:10px;
+         font-size:20px;
+     }
+     .career_table td{
+         padding-bottom:10px;
+         font-size:20px;
+     }
+     .career_table_jpn td{
+        font-family: 'Zen Kaku Gothic Antique', sans-serif;
+     }
+    .typing_score_table td{
+        border-bottom: solid 2px #aaaaaa;
+        padding-left:5px;
+    }
+    .typing_score_table th{
+        border-bottom: solid 2px #000000;
+    }
+    .typing_score_table{
+        table-layout: fixed;
+        width:90vw;
+        left:0;
+        right:0;
+        margin:auto;
+        padding:0;
+        text-align:center;
+        font-family: 'Zen Kaku Gothic Antique', sans-serif;
+        font-size:1.5rem;
+    }
+    .typing_table_small{
+        font-size:1rem;
+    }
     .iframe-songs{
         padding:0;
         margin:0;
@@ -492,9 +566,6 @@ margin:10px;
         display:block;
     }
     .vertical_border{
-        display:none;
-    }
-    .vertical_border2{
         display:none;
     }
     .works-dtl{
