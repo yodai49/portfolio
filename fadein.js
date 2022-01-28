@@ -52,12 +52,13 @@ function init() {
         fadein2d.fillText(drawTxt,(canvasWidth-fadein2d.measureText(drawTxtTemp).width)/2,canvasHeight/2);
 
         document.getElementById("dammy-fadein").style.display="none";
-        if(t>2.8) document.getElementById("fadeinCanvas").style.zIndex=-1;
+        if(t>2.8) document.getElementById("fadeinCanvas").style.zIndex=12;
 
         //Mouse Cursor
         prevMouseX=(2*prevMouseX+mouseX)/3;
         prevMouseY=(2*prevMouseY+mouseY)/3;
-        
+
+        fadein2d.lineWidth=1;
         if(!(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i))){ //if agent is PC 
             fadein2d.strokeStyle="rgba(32,32,32,"+(0.4+0.3*Math.sin(t*10))+")";
             fadein2d.fillStyle="rgba(0,0,0,0.2)";
