@@ -20,7 +20,7 @@ body{
 
 .copyright{
     text-align:center;
-    background-color:rgba(30,30,30,1);
+    background-color:#3B3F3C;
     color:rgba(255,255,255,1);
     font-family:'Spartan',monospace;
     font-size:1.5vh;
@@ -31,11 +31,12 @@ body{
     width:100%;
     position:absolute;
     bottom:0;
+    z-index:50;
 }
 .footer-fix{
     min-height:100vh;
     position:relative;
-    padding-bottom:60px;
+    padding-bottom:20px;
     box-sizing:border-box;
 }
 a{
@@ -49,6 +50,7 @@ a{
     z-index:100;
     left:0;
     top:0;
+    pointer-events:none;
 }
 .dammy-fadein{
     width:100%;
@@ -64,7 +66,7 @@ a{
     min-height:20mm;
 }
 .header{
-    background-color:rgba(56,53,51,0.93);
+    background-color:#3B3F3C;
     top:0;
     position:fixed;
     margin:0;
@@ -198,12 +200,12 @@ a{
     position:absolute;
     top:20px;
     right:10mm;
-    z-index:-200;
+    z-index:-1;
 }
 h1{
     font-size:min(20mm,7vw);
     padding:30px;
-    padding-top:60px;
+    padding-top:80px;
     padding-bottom:60px;
     left:0;
     right:0;
@@ -211,7 +213,8 @@ h1{
     text-align:center;
     position:relative;
     align-items:center;
-    font-family:'Poiret One',cursive;
+    font-family:'Spartan',cursive;
+    font-weight:lighter;
     letter-spacing:10px;
 }
 
@@ -219,7 +222,7 @@ h2{
     font-size:3.5vw;
     position:relative;
     margin-bottom:3mm;
-    font-family:'Poiret One',cursive;
+    font-family:'Spartan',cursive;
     letter-spacing:8px;
 }
 h2::before{
@@ -242,14 +245,73 @@ h3{
  .about-contents{
     width:100%;
     position:relative;
+    background-color:rgba(242,242,242,0.8);
+    z-index:1;
  }
+ .about-contents2{
+    width:100%;
+    position:relative;
+    padding-top:150px;
+    background-image:  
+    linear-gradient(90deg, rgba(206,202,172,0.8) 50%, transparent 0%), 
+    linear-gradient(0deg, rgba(206,202,172,0.8) 50%, transparent 0%);
+    background-position:  2px 0, 2px 0, 0 0, 0 0;
+    background-size: 2px 2px;
+    background-repeat: repeat;
 
+    background-color:rgba(209,205,175,0.8);
+    -webkit-clip-path: polygon(0 0, 100% 150px, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 150px, 100% 100%, 0 100%); 
+    z-index:-11;
+ }
+.back-1{
+    width:100%;
+    position:relative;
+    padding-top:150px;
+}
+.back-2{
+    width:100%;
+    position:relative;
+    padding-top:200px;
+    padding-bottom:150px;
+    background-color:rgba(209,205,175,0.8);
+/*    background-image: radial-gradient( rgba(209,205,175,0.8) 2px,rgba(204,200,170,0.8) 2px);
+    background-size: 4px 4px;*/
+
+    background-image:  
+    linear-gradient(90deg, rgba(204,200,170,0.8) 50%, transparent 0%), 
+    linear-gradient(0deg, rgba(209,205,175,0.8) 50%, transparent 0%);
+    background-position:  2px 0, 2px 0, 0 0, 0 0;
+    background-size: 2px 2px;
+    background-repeat: repeat;
+
+    -webkit-clip-path: polygon(0 0, 100% 150px, 100% 100%, 0 100%);
+    clip-path: polygon(0 0, 100% 150px, 100% 100%, 0 100%); 
+}.back-3{
+    width:100%;
+    position:relative;
+    padding-top:200px;
+    margin-top:-150px;
+    padding-bottom:80px;
+    background-color:#B5B7AA;
+
+    background-image:  
+    linear-gradient(90deg, rgba(181,183,170,0.8) 50%, transparent 0%), 
+    linear-gradient(0deg, rgba(178,180,167,0.8) 50%, transparent 0%);
+    background-position:  2px 0, 2px 0, 0 0, 0 0;
+    background-size: 2px 2px;
+    background-repeat: repeat;
+
+    -webkit-clip-path: polygon(0 150px, 100% 0, 100% 100%, 0 100%);
+    clip-path: polygon(0 150px, 100% 0, 100% 100%, 0 100%); 
+}
  .mypic{
     width:max(400px,30vw);
     height:max(400px,30vw);
     margin-left:10vw;
     margin-bottom:50px;
     vertical-align: top;
+    background:transparent;
  }
  .career{
     color:rgba(0,0,0,1);
@@ -276,7 +338,10 @@ h3{
  .career_table{
     text-align:left;
     margin-bottom:30px;
-    margin-left:15px;
+    margin-left:15vw;
+    padding-top:30px;
+    padding-bottom:30px;
+    width:70vw;
  }
  .career_table th{
      padding-right:20px;
@@ -329,6 +394,7 @@ margin:10px;
     top:0;
     right:47vw;
     display:inline-block;
+    z-index:50;
 }
 .works_pic:hover{
     filter:brightness(50%);
@@ -373,7 +439,7 @@ margin:10px;
 .vertical_border{
     display:block;
     width:100%;
-    margin-bottom:300px;
+    margin-bottom:320px;
 }
 .vertical_border:after{
     content:"";
@@ -398,7 +464,21 @@ margin:10px;
     left:50%;
     position:absolute;
 }
-
+.vertical_border_new{
+    height:220px;
+    width:100vw;
+    position:relative;
+}
+.vertical_border_new:after{
+    content:"";
+    background-color:black;
+    width:1px;
+    height:180px;
+    display:inline-block;
+    position:absolute;
+    margin-top:60px;
+    left:50%;
+}
 .works-dtl{
     margin:25px;
     margin-bottom:30px;
@@ -413,7 +493,7 @@ margin:10px;
     vertical-align:middle;
     padding:1mm;
     margin-right:2mm;
-    border-left: solid 6px #8F581F;
+    border-left: solid 6px #D9A223;
     white-space:nowrap;
     font-size:10px;
 }
@@ -432,6 +512,9 @@ margin:10px;
     vertical-align: top;
     width:100%;
     padding-bottom:100px;
+}
+.margin-typing{
+    height:50px;
 }
  @media (max-width:1020px) { /* For smartphone*/
     h1{
@@ -505,7 +588,8 @@ margin:10px;
     .career_typing{
         color:rgba(0,0,0,1);
         width:90vw;
-        margin:0;
+        padding:0;
+        margin:5vw;
         display:inline-block;
         vertical-align: top; 
         font-size:2rem;
@@ -513,11 +597,12 @@ margin:10px;
     .career_table{
         text-align:left;
         margin-bottom:30px;
-        margin-left:15px;
+        padding-right:0;
+        padding:0;
+        left:5vw;
         font-size:20px;
      }
      .career_table th{
-         padding-right:20px;
          padding-bottom:10px;
          font-size:20px;
      }
