@@ -85,10 +85,6 @@ function init() {
 
         ctx2d.fillRect(canvasWidth*0.8,0,canvasWidth*0.2,canvasHeight);
 
-        var FONT_SIZE=Math.min(document.getElementById("myCanvas").width/TITLE_MAX_LENGTH,document.getElementById("myCanvas").height/8.3);
-        ctx2d.font=FONT_SIZE + "px "+ CUR_FONTNAME;
-        ctx2d.textBaseline = "top";
-
         const TITLE_MSG_SEC=3;
         var showMsgNum=Math.floor(t/TITLE_MSG_SEC)%TITLE_TEXT.length;
         var titleTextPosLeft=50;
@@ -96,33 +92,32 @@ function init() {
 
         var drawTxt=TITLE_TEXT[0][2];
 
+        var rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height-180);
+        if(document.getElementById("myCanvas").width<1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
+        var rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
+        var rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
+
+        var FONT_SIZE=rectSize/7;
+        ctx2d.font=FONT_SIZE + "px "+ CUR_FONTNAME;
+        ctx2d.textBaseline = "top";
+
         ctx2d.fillStyle="rgba(0,0,0,0.5)";
-        ctx2d.fillRect((document.getElementById("myCanvas").width-ctx2d.measureText(drawTxt).width)/2-100,
-        FONT_SIZE*1.2*(-2)+(document.getElementById("myCanvas").height-FONT_SIZE)/2,
-        ctx2d.measureText(drawTxt).width+200,
-        ctx2d.measureText(drawTxt).width+200);
+        ctx2d.fillRect(rectLeft,rectTop,rectSize,rectSize);
         ctx2d.strokeStyle="rgba(255,255,255,1)";
-        ctx2d.strokeRect((document.getElementById("myCanvas").width-ctx2d.measureText(drawTxt).width)/2-100,
-        FONT_SIZE*1.2*(-2)+(document.getElementById("myCanvas").height-FONT_SIZE)/2,
-        ctx2d.measureText(drawTxt).width+200,
-        ctx2d.measureText(drawTxt).width+200);
+        ctx2d.strokeRect(rectLeft,rectTop,rectSize,rectSize);
 
         for(var i = 0;i < 3;i++){
             var titleTempSum=0;
             if(i>=1) titleTempSum+=TITLE_TEXT[showMsgNum][0].length;
             if(i>=2) titleTempSum+=TITLE_TEXT[showMsgNum][1].length;
-//            var drawTxt=TITLE_TEXT[showMsgNum][i].substr(0,Math.max(0,Math.floor(t*10)%(TITLE_MSG_SEC*10)-titleTempSum));
             drawTxt=TITLE_TEXT[showMsgNum][i].substr(0,Math.max(0,Math.floor(t*20)-titleTempSum));
             inputChar=String.fromCharCode(65+Math.floor(Math.random()*25));
-//            ctx2d.fillText(drawTxt,titleTextPosLeft,(i+0.1)*Math.min(document.getElementById("myCanvas").height,600)/3.1);
 
             ctx2d.fillStyle="rgba(9,13,10,0.8)";//underline
             titleTextPosLeft=(document.getElementById("myCanvas").width-ctx2d.measureText(drawTxt).width)/2;
             titleTextPosTop=FONT_SIZE*1.2*(i-1)+(document.getElementById("myCanvas").height-FONT_SIZE)/2;
             if(0<Math.max(0,Math.floor(t*20)-titleTempSum) && Math.max(0,Math.floor(t*20)-titleTempSum)<TITLE_TEXT[showMsgNum][i].length) drawTxt+=inputChar;
-            if(document.getElementById("fadeinCanvas").width < 1020) titleTextPosTop-=FONT_SIZE;
 
-//            ctx2d.fillRect(titleTextPosLeft,titleTextPosTop+(FONT_SIZE*0.6),ctx2d.measureText(drawTxt).width,30);
             ctx2d.fillStyle="rgba(217,162,35,1)"; //text
             ctx2d.fillText(drawTxt,titleTextPosLeft,titleTextPosTop);
         }

@@ -1,11 +1,15 @@
 *{
     margin: 0;
     padding:0;
+    font-size:16px;
 }
-
 .backImg{
     width:100vw;
     height:100vh;
+}
+.header{
+    font-size:120px;
+    -webkit-text-size-adjust: none;
 }
 .homeTxt{
     width:100vw;
@@ -52,7 +56,6 @@
     align-items: center;
     color:rgba(255,255,255,1);
     font-family:'Poiret One',cursive;
-    font-size:1rem;
     letter-spacing:3px;
     transition:all 0.3s;
 }
@@ -88,6 +91,7 @@
     color:white;
     position:fixed;
     margin:50px;
+    z-index:60;
     font-family:'Poiret One',cursive;
     display:block;
 }
@@ -95,7 +99,6 @@
 @media (max-width:1020px) { /* For smartphone*/
 	.bt-mobile {
 		display: flex;
-        font-size:1rem;
         position:absolute;
         transition:all 0.3s;
 	}
@@ -113,14 +116,13 @@
     }
     .button-wrapper{
         background-color:rgba(0,0,0,0);
-        position:absolute;
+        position:fixed;
         z-index:1;
-        bottom:0vh;
-        top:55vh;
+        top:75vh;
         right:0;
         left:0;
         width:70vw;
-        height:40vh;
+        height:25vh;
         margin:auto;
     }
     .button-1{
