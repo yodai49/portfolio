@@ -2,6 +2,7 @@
     margin: 0;
     padding:0;
 }
+
 .backImg{
     width:100vw;
     height:100vh;
@@ -43,7 +44,7 @@
 .buttons{
     position:absolute;
     text-align:center;
-    width:12vh;
+    width:16vh;
     height:12vh;
     right:0px;
     display: flex;
@@ -51,29 +52,28 @@
     align-items: center;
     color:rgba(255,255,255,1);
     font-family:'Poiret One',cursive;
-    font-size:3vh;
+    font-size:1rem;
     letter-spacing:3px;
     transition:all 0.3s;
-    box-shadow:-4px 4px 4px rgba(0,0,0,1);
 }
 .buttons:hover{
     width:24vh;
 }
 .button-1{
-    background-color:rgba(179,175,145,0.8);
+/*    background-color:rgba(179,175,145,0.8);*/
     top:2vh;
 }
 .button-2{
-    background-color:rgba(166,166,166,0.8);
-    top:16vh;
+/*    background-color:rgba(166,166,166,0.8);*/
+    top:14vh;
 }
 .button-3{
-    background-color:rgba(116,113,88,0.8);
-    top:30vh;
+/*    background-color:rgba(116,113,88,0.8);*/
+    top:26vh;
 }
 .button-4{
-    background-color:rgba(89,89,89,0.8);
-    top:44vh;
+/*    background-color:rgba(89,89,89,0.8);*/
+    top:38vh;
 }
 .buttons:hover .bt-normal{
     display:none;
@@ -84,10 +84,18 @@
 .bt-mobile{
     display:none;
 }
+.detail_exp{
+    color:white;
+    position:fixed;
+    margin:50px;
+    font-family:'Poiret One',cursive;
+    display:block;
+}
+
 @media (max-width:1020px) { /* For smartphone*/
 	.bt-mobile {
 		display: flex;
-        font-size:55%;
+        font-size:1rem;
         position:absolute;
         transition:all 0.3s;
 	}
