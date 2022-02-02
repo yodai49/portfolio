@@ -96,6 +96,11 @@ function init() {
         if(document.getElementById("myCanvas").width<1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
         var rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
         var rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
+        if(rectTop+rectSize>=document.getElementById("myCanvas").height*0.74 && document.getElementById("myCanvas").width<1020){
+            rectSize/=1.5;
+            rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
+            rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
+        }
 
         var FONT_SIZE=rectSize/7;
         ctx2d.font=FONT_SIZE + "px "+ CUR_FONTNAME;
