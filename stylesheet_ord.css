@@ -5,8 +5,8 @@
 }
 body{
     background-color:rgba(242,242,242,1);
+
     font-family:'Spartan',monospace;
-    font-size:1rem;
 }
 .wrapper{
     width:100%;
@@ -20,13 +20,13 @@ body{
 
 .copyright{
     text-align:center;
-    background-color:#3B3F3C;
+    background-color:#2B2F2C;
     color:rgba(255,255,255,1);
     font-family:'Spartan',monospace;
-    font-size:1.5vh;
+    font-size:0.8rem;
     padding:0px;
-    padding-top:20px;
-    padding-bottom:20px;
+    padding-top:30px;
+    padding-bottom:30px;
     margin:0;
     width:100%;
     position:absolute;
@@ -66,23 +66,24 @@ a{
     min-height:20mm;
 }
 .header{
-    background-color:#3B3F3C;
+    background-color:rgba(59,63,60,0.9);
     top:0;
     position:fixed;
     margin:0;
+    padding:0;
     z-index:10;
     color:white;
     z-index:5;
     text-align:center;
     height:7vh;
     min-height:20mm;
-    width:100%;
+    width:100vw;
     box-shadow:0px 3px 4px rgba(0,0,0,0.5);
 }
 .header-txt{
     font-family:'Poiret One',cursive;
-    font-size:1.2rem;
     line-height:max(7vh,20mm);
+    font-size:2rem;
     vertical-align:middle;
     left:max(20mm,6vh);
     position:absolute;
@@ -114,7 +115,6 @@ a{
     z-index:90;
     top:4mm;
     color:rgba(255,255,255,1);
-    font-size:1rem;
     line-height:12mm;
     vertical-align: middle;
     font-family:'Poiret One',cursive;
@@ -183,7 +183,6 @@ a{
     z-index:90;
     top:4mm;
     color:rgba(255,255,255,1);
-    font-size:1rem;
     line-height:12mm;
     vertical-align: middle;
     font-family:'Poiret One',cursive;
@@ -231,7 +230,7 @@ h2::before{
     height:5px;
     background-color:#000000;
     position:absolute;
-    bottom:-2px;
+    bottom:-6px;
     left:0px;
  }
 h3{
@@ -243,9 +242,10 @@ h3{
     letter-spacing:5px;
 }
  .about-contents{
-    width:100%;
+    width:100vw;
+    margin:0;
+    padding:0;
     position:relative;
-    background-color:rgba(242,242,242,0.8);
     z-index:1;
  }
  .about-contents2{
@@ -316,7 +316,6 @@ h3{
  .career{
     color:rgba(0,0,0,1);
     width:48vw;
-    height:30vw; 
     margin-left:8px;
     display:inline-block;
     vertical-align: top;
@@ -357,6 +356,9 @@ h3{
     border-bottom: solid 2px #aaaaaa;
     padding-left:5px;
 }
+.ovwra{
+    overflow:hidden;
+}
 .typing_score_table th{
     border-bottom: solid 2px #000000;
 }
@@ -373,19 +375,17 @@ h3{
 .typing_table_small{
     font-size:0.8rem;
 }
- .career-dtl{
+.career-dtl{
     margin:25px;
     margin-bottom:30px;
+    margin-top:40px;
     padding-left:10px;
     border-left-color:#000000;
-    border-left-width:3px;
+    border-left-width:1px;
     border-left-style:solid;
- }
+}
 .font-rhm{
     font-family:'Red hat Mono',monospace;
-}
-.career-text{
-margin:10px;
 }
 .works_pic{
     width:38vw;
@@ -467,6 +467,7 @@ margin:10px;
 .vertical_border_new{
     height:220px;
     width:100vw;
+    margin-top:100px;
     position:relative;
 }
 .vertical_border_new:after{
@@ -476,7 +477,6 @@ margin:10px;
     height:180px;
     display:inline-block;
     position:absolute;
-    margin-top:60px;
     left:50%;
 }
 .works-dtl{
@@ -487,7 +487,7 @@ margin:10px;
     border-left-width:3px;
     border-left-style:solid;
  }
- .tag {
+ .tag{
     background-color:#D4C6A8;
     width:20mm;
     vertical-align:middle;
@@ -499,11 +499,12 @@ margin:10px;
 }
 .year{
     color:#999999;
-    font-size:1rem;
     margin:2mm;
 }
 .iframe-songs{
     padding-left:5%;
+    width:40%;
+    height:40vh;
 }
 .txt-center{
     text-align:center;
@@ -516,39 +517,41 @@ margin:10px;
 .margin-typing{
     height:50px;
 }
+.career-text{
+    line-height:2rem;
+}
  @media (max-width:1020px) { /* For smartphone*/
-    h1{
-        font-size:max(24mm,12vw);
-    }
-    h2{
-        font-size:max(15.2mm,9vw);
-    }
-    h3{
-        font-size:max(11.6mm,6vw);
+    html{
+        -webkit-text-size-adjust: none;
+        width:100vw;
+        margin:0;
+        padding:0;
     }
     body{
-        font-size:max(3.6mm,1.5vw);
+        margin:0;
+        padding:0;
+        font-size:2rem;
+        font-size:min(2vh,2rem);
     }
     .contact{
         height:auto;
-        font-size:max(3.6mm,1.5vw);
     }
     .career{
         width:90vw;
-        height:auto;
         vertical-align: top;
         position:relative;
     }
     .txt-center{
         width:90vw;
-        height:auto;
         vertical-align: top;
         position:relative;
+        margin-top:120px;
+        margin-bottom:120px;
     }
     .career-text{
         width:90vw;
         height:auto;
-        margin-left:5vw;
+        line-height:4rem;
     }
     .mypic{
         width:50vw;
@@ -559,31 +562,34 @@ margin:10px;
         margin:auto;
         left:0;
         right:0;
+        width:100%;
         position:auto;
-        width:100vw;
         margin:0;
         padding:0;
         margin-top:2vw;
         display:block;
         position:relative;
     }
-    .works_pic:hover{
-        width:100vw;
-        right:auto;
-        top:auto;
-    }    
     .works_txt{
         position:relative;
         top:auto;
         left:auto;
+        width:100%;
         margin:auto;
-        padding:5mm;
-        background-color:rgba(0,0,0,0.85);
-        color:rgba(255,255,255,1);
-        width:calc(100vw - 10mm);
+        padding-top:3vh;
+        color:rgba(0,0,0,1);
         display:block;
         margin-bottom:5vh;
         margin-top:-10px;
+        line-height:150%;
+    }
+    .career-dtl{
+        margin:25px;
+        margin-bottom:120px;
+        margin-top:120px;
+        text-align:center;
+        border-left:none;
+        line-height:4rem;
     }
     .career_typing{
         color:rgba(0,0,0,1);
@@ -592,23 +598,25 @@ margin:10px;
         margin:5vw;
         display:inline-block;
         vertical-align: top; 
-        font-size:2rem;
     }
     .career_table{
         text-align:left;
+        margin:0;
         margin-bottom:30px;
-        padding-right:0;
+        margin-left:5vw;
+        margin-right:0px;
+        width:90vw;
         padding:0;
+        padding-top:40px;
+        padding-bottom:30px;
         left:5vw;
-        font-size:20px;
+        line-height:4rem;
      }
      .career_table th{
          padding-bottom:10px;
-         font-size:20px;
      }
      .career_table td{
          padding-bottom:10px;
-         font-size:20px;
      }
      .career_table_jpn td{
         font-family: 'Zen Kaku Gothic Antique', sans-serif;
@@ -623,45 +631,68 @@ margin:10px;
     .typing_score_table{
         table-layout: fixed;
         width:90vw;
-        left:0;
-        right:0;
-        margin:auto;
+        margin:0;
         padding:0;
         text-align:center;
         font-family: 'Zen Kaku Gothic Antique', sans-serif;
-        font-size:1.5rem;
     }
     .typing_table_small{
-        font-size:1rem;
+        font-size:min(1.5vh,1.5rem);
     }
     .iframe-songs{
         padding:0;
         margin:0;
-    }
-    .works-dtl{
-        font-size:2vw;
+        width:100%;
+        height:25vh;
     }
     .each_works:after{
         padding-top:0;
     }
     .each_works{
-        width:100%;
+        width:70vw;
         height:auto;
+        left:0;
+        right:0;
+        margin:auto;
+        padding:0;
         position:relative;
         display:block;
+    }
+    .year{
+        text-align:center;
+        padding-top:0px;
+        padding-bottom:40px;
     }
     .vertical_border{
         display:none;
     }
     .works-dtl{
-        border-left-color:#ffffff;
+        border-left-color:black;
     }
-    .h2{
-        padding-left:50mm;
-        font-size:24px;
+    h1{
+        font-size:min(10vh,5rem);
+        padding:8vh;
+    }
+    h3{
+        font-size:min(6.5vh,3.5rem);
+        font-size:3.5rem;
+    }
+    h2{
+        font-size:min(6vh,3.5rem);
+        padding-top:1vh;
+        padding-bottom:1vh;
+        margin-bottom:3vh;
+        line-height:normal;
+        left:0;
+        right:0;
+        margin:auto;
+        text-align:center;
     }
     h2::before{
-        background-color:#ffffff;
+        display:none;
+    }
+    .copyright{
+        font-size:1.2rem;
     }
     .non-white:before{
         background-color:#000000;
@@ -671,10 +702,13 @@ margin:10px;
     }
     .tag{
         color:#000;
-        font-size:2.8vw;
-    }
-    .year{
-        font-size:2vw;
+        font-size:1.5rem;
+        text-align:center;
+        position:relative;
+        left:0;
+        right:0;
+        margin:auto;
+        display:none;
     }
     .header-button-pc{
         display:none;
@@ -690,6 +724,7 @@ margin:10px;
     .header-txt{
         left:0;
         right:0;
+        font-size:4rem;
         margin:auto;
     }    
     .header-nm-button-pc{
@@ -699,9 +734,9 @@ margin:10px;
         position: fixed; /* header max(7vh,20mm) */
         right:5mm;
         display: flex;
-        top:max(0.5vh,4mm);
+        top:max(1vh,4mm);
         width:max(6vh,8mm);
-        height:max(6vh,8mm);
+        height:max(5vh,8mm);
         justify-content: center;
         align-items: center;
         z-index: 120;
@@ -753,7 +788,6 @@ margin:10px;
     }
     .menu-link{
         color:#ddd;
-        font-size:3vh;
         left:0;
         right:0;
         margin:auto;
@@ -761,7 +795,6 @@ margin:10px;
     }
     .menu-link:hover{
         color:#D4C6A8;
-        font-size:4vh;
     }
     .menu-link-1{
         top:35vh;
@@ -775,16 +808,11 @@ margin:10px;
     .menu-link-4{
         top:65vh;
     }
-    .iframe-songs{
-        width:100vw;
-        padding-left:0;
-        margin-left:0;
-        left:0;
-        height:60vw;
-    }
     .each_songs{
-        margin:0;
-        width:100%;
+        width:80vw;
+        left:0;
+        right:0;
+        margin:auto;
         padding:0;
     }
     .each_songs:after{
