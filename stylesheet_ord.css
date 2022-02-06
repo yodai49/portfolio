@@ -531,18 +531,22 @@ h3{
         margin:0;
         padding:0;
         font-size:2rem;
-        font-size:min(2vh,2rem);
+        font-size:max(4mm,min(2vh,2rem));
     }
     .contact{
         height:auto;
     }
     .career{
-        width:90vw;
+        left:0;
+        right:0;
+        margin:auto;
+        width:100vw;
+        text-align:center;
+        padding:0;
         vertical-align: top;
         position:relative;
     }
     .txt-center{
-        width:90vw;
         vertical-align: top;
         position:relative;
         margin-top:120px;
@@ -550,6 +554,9 @@ h3{
     }
     .career-text{
         width:90vw;
+        left:0;
+        right:0;
+        margin:auto;
         height:auto;
         line-height:4rem;
     }
@@ -657,6 +664,7 @@ h3{
         padding:0;
         position:relative;
         display:block;
+        text-align:center;
     }
     .year{
         text-align:center;
@@ -668,6 +676,7 @@ h3{
     }
     .works-dtl{
         border-left-color:black;
+        border-left-style:none;
     }
     h1{
         font-size:min(10vh,5rem);
@@ -679,7 +688,7 @@ h3{
     }
     h2{
         font-size:min(6vh,3.5rem);
-        padding-top:1vh;
+        padding-top:3vh;
         padding-bottom:1vh;
         margin-bottom:3vh;
         line-height:normal;
@@ -724,7 +733,7 @@ h3{
     .header-txt{
         left:0;
         right:0;
-        font-size:4rem;
+        font-size:min(4vh,4rem);
         margin:auto;
     }    
     .header-nm-button-pc{
@@ -809,7 +818,7 @@ h3{
         top:65vh;
     }
     .each_songs{
-        width:80vw;
+        width:60vw;
         left:0;
         right:0;
         margin:auto;

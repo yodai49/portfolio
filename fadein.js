@@ -1,13 +1,15 @@
 var animationmax = 1; //nextmodeにうつるタイミング
 var INIT_TIME_ORD=performance.now()*2; //パフォーマンス
-var t = 0; //開いてからの経過時間 ミリ秒
+var t = 0; //ロード完了後からの経過時間 ミリ秒　t2はロード完了前からの時間　t3はフェードインの管理用
 var canvasWidth,canavasHeight;
 var mouseX=0,mouseY=0,prevMouseX=0,prevMouseY=0;
+var loadedFlg=0;
 
-window.addEventListener('load', init); //ロードイベント登録
+window.addEventListener('load',function(){ loadedFlg=1}); //ロードイベント登録
 window.addEventListener('DOMContentLoaded', function(){
     document.getElementById("fadeinCanvas").style.zIndex=100;
 });
+window.addEventListener('DOMContentLoaded',init);
 window.addEventListener('mousemove', function (e) { //マウスが動いた時
     var rect = e.target.getBoundingClientRect();
 	mouseX = e.clientX;
