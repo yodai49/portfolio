@@ -4,6 +4,22 @@ var t = 0; //ロード完了後からの経過時間 ミリ秒　t2はロード�
 var canvasWidth,canavasHeight;
 var mouseX=0,mouseY=0,prevMouseX=0,prevMouseY=0;
 var loadedFlg=0;
+var nextPage="";
+var nextPageLP=0;
+/*document.querySelectorAll("a").forEach(function(val){val.addEventListener('click',function(event){
+    event.preventDefault;
+    console.log("AAA");
+    nextPage=$(this).attr('href');
+    nextPageLP=performance.now();
+    document.getElementById("fadeinCanvas").style.zIndex=999;
+});});*/
+document.getElementById("prev_buttons1").addEventListener('click',function(event){
+    nextPage=event.target.title;
+    localStorage.setItem("nextPage",nextPage);
+    nextPageLP=performance.now();
+    document.getElementById("fadeinCanvas").style.zIndex=999;
+    event.preventDefault()
+})
 
 window.addEventListener('load',function(){ loadedFlg=1}); //ロードイベント登録
 window.addEventListener('DOMContentLoaded', function(){
@@ -35,6 +51,17 @@ function init() {
         fadein2d.fillStyle="rgba(0,0,0,"+ Math.min(1,Math.max(0,1-(t-0.8)/2))+")";
         fadein2d.fillRect(0,0,canvasWidth,canvasHeight);
 
+        if(nextPage!=""){ //遷移時
+            let t2=performance.now()-nextPageLP;
+            fadein2d.fillStyle="rgba(0,0,0," +(t2/1000)+")";
+            fadein2d.fillRect(0,0,canvasWidth*(t2/500),canvasHeight);
+            if(t2 > 1000) {
+                nextPage=localStorage.getItem("nextPage");
+                nextPageLP=-1;
+                if(nextPage != undefined) window.location.assign(localStorage.getItem("nextPage"));
+            }
+        }
+
         let fadein_fontsize=18;
         fadein2d.font=fadein_fontsize+"mm "+"Poiret One, cursive";
         fadein2d.fillStyle="rgba(255,255,255,"+ Math.min(1,Math.max(0,1-(t-0.8)/1.5))+")";
@@ -54,8 +81,11 @@ function init() {
         fadein2d.fillText(drawTxt,(canvasWidth-fadein2d.measureText(drawTxtTemp).width)/2,canvasHeight/2);
 
         document.getElementById("dammy-fadein").style.display="none";
-        if(t>2.8) document.getElementById("fadeinCanvas").style.zIndex=12;
-
+        if(t>2.8 && nextPage=="") document.getElementById("fadeinCanvas").style.zIndex=12;
+        if(nextPage!=""){ //遷移時
+            let t2=performance.now()-nextPageLP;
+            if(t2 > 1000) location.href=nextPage;
+        }
         //Mouse Cursor
         prevMouseX=(2*prevMouseX+mouseX)/3;
         prevMouseY=(2*prevMouseY+mouseY)/3;

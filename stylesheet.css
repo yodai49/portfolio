@@ -164,6 +164,11 @@
 }
 a{
     text-decoration-line:none;
+    color:white;
+    cursor:pointer;
+}
+span{
+    cursor:pointer;
 }
 .fadein{
     position:fixed;

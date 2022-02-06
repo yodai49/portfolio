@@ -5,7 +5,6 @@
 }
 body{
     background-color:rgba(242,242,242,1);
-
     font-family:'Spartan',monospace;
 }
 .wrapper{
@@ -17,7 +16,14 @@ body{
     min-height:100vh;
     position:absolute;
 }
-
+a{
+    text-decoration-line:none;
+    color:white;
+    cursor:pointer;
+}
+span{
+    cursor:pointer;
+}
 .copyright{
     text-align:center;
     background-color:#2B2F2C;
