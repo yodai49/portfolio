@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="./stylesheet_ord.css">
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Red+Hat+Mono:wght@500&family=Spartan:wght@300&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet"><html>
 <html>
     <body>
@@ -8,27 +9,25 @@
             <head>
                 <meta charset="utf-8"/>
                 <meta name="viewport">
-                <script src="./fadein.js"></script>
-                <link rel="stylesheet" href="./stylesheet_ord.css">
             </head>
 
             <div class="header">
-                <a href="./index.html"><img src="./imgs/icon.png" class="header-icon"></a>
-                <a class="header-txt" href="./index.html">toruthi</a>
+                <a id="prev_buttons1" href="./index.html"><img title="./index.html" src="./imgs/icon.png" class="header-icon"></a>
+                <a href="./index.html" class="header-txt" href="./index.html">toruthi</a>
                 <a href="about.html" class="header-nm-button-pc header-button-pc-1">
-                    <span class="hb-nm-normal">ABOUT</span>
+                    <span class="hb-nm-normal" href="./about.html">ABOUT</span>
                 </a>
                 <a href="works.html" class="header-button-pc header-button-pc-2">
-                    <span class="hb-normal">W</span>
-                    <span class="hb-hover">WORKS</span>
+                    <span href="works.html" class="hb-normal">W</span>
+                    <span href="works.html" class="hb-hover">WORKS</span>
                 </a>
                 <a href="songs.html" class="header-button-pc header-button-pc-3">
-                    <span class="hb-normal">S</span>
-                    <span class="hb-hover">SONGS</span>
+                    <span href="songs.html" class="hb-normal">S</span>
+                    <span href="songs.html" class="hb-hover">SONGS</span>
                 </a>
                 <a href="typing.html" class="header-button-pc header-button-pc-4">
-                    <span class="hb-normal">T</span>
-                    <span class="hb-hover">TYPING</span>
+                    <span href="typing.html" class="hb-normal">T</span>
+                    <span href="typing.html" class="hb-hover">TYPING</span>
                 </a>
                 <div class="header-button-sp">
                     <input type="checkbox" id="menu-btn-check">
@@ -85,4 +84,5 @@
             </div>
         </div>
     </body>
+    <script src="./fadein.js"></script>
 </html>

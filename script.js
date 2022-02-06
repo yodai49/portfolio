@@ -15,15 +15,17 @@ var balls=[{posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,v
     {posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0},
     {posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0},
     {posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0}];
-
+var nextPage="";
+var nextPageLP=0;
 // ページの読み込みを待つ
 
-function keypress(mykey,mykeycode){ //キー入力イベント..
-    if(mykey=="z"){
-        window.alert("z");
-    }
-}
-
+document.getElementById("prev_buttons1").addEventListener('click',function(event){
+    nextPage=event.target.title;
+    localStorage.setItem("nextPage",nextPage);
+    nextPageLP=performance.now();
+    document.getElementById("fadeinCanvas").style.zIndex=999;
+    event.preventDefault()
+})
 window.addEventListener('load', init); //ロードイベント登録
 window.addEventListener('DOMContentLoaded', function(){ ///キー入力イベント登録
     window.addEventListener("keydown", function(e){
@@ -69,6 +71,17 @@ function init() {
             ctx2d.fillRect(canvasWidth/2,0,canvasWidth/2,canvasHeight);
         }
 */
+        if(nextPage!=""){ //遷移時
+            let t2=performance.now()-nextPageLP;
+            fadein2d.fillStyle="rgba(0,0,0," +(t2/1000)+")";
+            fadein2d.fillRect(0,0,canvasWidth*(t2/500),canvasHeight);
+            if(t2 > 1000) {
+                nextPage=localStorage.getItem("nextPage");
+                nextPageLP=-1;
+                if(nextPage != undefined) window.location.assign(localStorage.getItem("nextPage"));
+            }
+        }
+
         ctx2d.fillStyle="rgba(59,63,60,0.2)";
         ctx2d.fillRect(0,0,canvasWidth,canvasHeight);
         ctx2d.fillStyle="rgba(10,16,13,0.4)";
@@ -142,9 +155,9 @@ function init() {
 
         fadein2d.fillStyle="rgba(0,0,0,"+ Math.max(0,1-t)+")";
         fadein2d.fillRect(0,0,canvasWidth,canvasHeight);
-        if(t>1) document.getElementById("fadeinCanvas").style.zIndex=-1;
+        if(t>1 && nextPage=="") document.getElementById("fadeinCanvas").style.zIndex=-1;
         document.getElementById("dammy-fadein").style.display="none";
 
-        requestAnimationFrame(tick);
+        if(nextPageLP!=-1)requestAnimationFrame(tick);
     }
 }
