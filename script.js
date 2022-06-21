@@ -2,7 +2,7 @@ var animationmax = 1; //nextmodeにうつるタイミング
 var animationcnt=0; //アニメーションのカウンター 1でスタート -1処理前
 var lastPerformance=performance.now(); //パフォーマンス
 var t = 0; //開いてからの経過時間 ミリ秒
-const INIT_TIME=performance.now();
+var INIT_TIME;
 const TITLE_TEXT=[["Welcome to","toruthi's", "portfolio."]]
 const TITLE_MAX_LENGTH = 7;
 const MONOS_FONTNAME="Red Hat Mono, monospace";
@@ -100,7 +100,8 @@ function init() {
     //ローディング処理////////////////////////////////////////
     canvasWidth=document.getElementById("myCanvas").width;
     canvasHeight=document.getElementById("myCanvas").height;
-    
+    INIT_TIME=performance.now();
+
     //2Dの処理
     ctx2d=document.getElementById("myCanvas").getContext("2d");
     fadein2d=document.getElementById("fadeinCanvas").getContext("2d");
