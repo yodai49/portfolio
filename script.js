@@ -94,7 +94,7 @@ function processBars(){
     processCollisionOfBars();
     moveBars();
     drawBars();
-    if((20+bars.length)*Math.random()<1 && bars.length<10) generateBars();
+    if(bars.length<10) generateBars();
 }
 function init() {
     //ローディング処理////////////////////////////////////////
