@@ -8,15 +8,12 @@ const TITLE_MAX_LENGTH = 7;
 const MONOS_FONTNAME="Red Hat Mono, monospace";
 const SS_FONTNAME="Spartan, sans-serif";
 const CUR_FONTNAME="Poiret One, cursive";
-var canvasWidth,canavasHeight;
+var canvasWidth,canvasHeight;
 var mouseX=0,mouseY=0,prevMouseX=0,prevMouseY=0;
-var balls=[{posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0},
-    {posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0},
-    {posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0},
-    {posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0},
-    {posx:0,posy:0,size:15,velx:0,vely:0},{posx:0,posy:0,size:15,velx:0,vely:0}];
+var bars=[];
 var nextPage="";
 var nextPageLP=0;
+var corCoef=1;
 // ページの読み込みを待つ
 
 document.getElementById("prev_buttons1").addEventListener('click',function(event){
@@ -35,20 +32,83 @@ window.addEventListener('mousemove', function (e) { //マウスが動いた時
     var rect = e.target.getBoundingClientRect();
 	mouseX = e.clientX;
 	mouseY = e.clientY;
-
 }, false);
-
+function generateBars(){
+    bars.push({
+        x:Math.random()*canvasWidth,
+        y:Math.random()*canvasHeight,
+        vx:(Math.random()-0.5)*6,
+        vy:(Math.random()-0.5)*6,
+        rt:(Math.random()-0.5)*1,
+        vrt:(Math.random()-0.5)*0.1,
+        size:(Math.random()*0.1+0.12)*canvasWidth,
+        t:0,
+        life:Math.random()*400+100});
+}
+function affectWindToBars(){
+    for (i = 0;i<bars.length;i++){
+        var scale=1/(Math.pow(bars[i].x-mouseX,2)+Math.pow(bars[i].y-mouseY,2)+1);
+        bars[i].vx+=scale*(bars[i].x-mouseX)*(mouseX-prevMouseX);
+        bars[i].vy+=scale*(bars[i].y-mouseY)*(mouseY-prevMouseY);
+        bars[i].vx=Math.min(3,bars[i].vx);
+        bars[i].vy=Math.min(3,bars[i].vy);
+    }
+}
+function processCollisionOfBars(){
+    for (i = 0;i < bars.length;i++){
+        posx1=bars[i].x+bars[i].size/2*Math.cos(bars[i].rt);
+        posx2=bars[i].x-bars[i].size/2*Math.cos(bars[i].rt);
+        posy1=bars[i].y+bars[i].size/2*Math.sin(bars[i].rt);
+        posy2=bars[i].y-bars[i].size/2*Math.sin(bars[i].rt);
+        if(posx1<0 || posx2 < 0) bars[i].vx=Math.abs(bars[i].vx);
+        if(posx1>canvasWidth || posx2 > canvasWidth) bars[i].vx=-Math.abs(bars[i].vx);
+        if(posy1<0 || posy2 < 0) bars[i].vy=Math.abs(bars[i].vy);
+        if(posy1>canvasWidth || posy2 > canvasHeight) bars[i].vy=-Math.abs(bars[i].vy);
+    }
+}
+function moveBars(){
+    for (i = 0;i < bars.length;i++){
+        bars[i].t+=corCoef;
+        bars[i].x+=bars[i].vx*corCoef;
+        bars[i].y+=bars[i].vy*corCoef;
+        bars[i].rt+=bars[i].vrt*corCoef;
+        if(bars[i].t>=bars[i].life) bars.splice(i,1);
+    }
+}
+function getTrans(t,life){
+    return (Math.min(1,Math.min((t-30)/30,-(t-life)/30)))*0.5;
+}
+function drawBars(){
+    ctx2d.lineWidth=1;
+    for (i = 0;i < bars.length;i++){
+        transOfBar=getTrans(bars[i].t,bars[i].life)
+        ctx2d.strokeStyle="rgba(255,255,255," + transOfBar + ")";
+        ctx2d.beginPath();
+        ctx2d.moveTo(bars[i].x+bars[i].size/2*Math.cos(bars[i].rt),bars[i].y+bars[i].size/2*Math.sin(bars[i].rt));
+        ctx2d.lineTo(bars[i].x-bars[i].size/2*Math.cos(bars[i].rt),bars[i].y-bars[i].size/2*Math.sin(bars[i].rt));
+        ctx2d.stroke();
+    }
+}
+function processBars(){
+    affectWindToBars();
+    processCollisionOfBars();
+    moveBars();
+    drawBars();
+    if((20+bars.length)*Math.random()<1 && bars.length<10) generateBars();
+}
 function init() {
     //ローディング処理////////////////////////////////////////
-
+    canvasWidth=document.getElementById("myCanvas").width;
+    canvasHeight=document.getElementById("myCanvas").height;
+    
     //2Dの処理
     ctx2d=document.getElementById("myCanvas").getContext("2d");
     fadein2d=document.getElementById("fadeinCanvas").getContext("2d");
-
     tick();
 
     function tick() {
         var inputChar;
+        corCoef=(performance.now() -(t*1000+INIT_TIME))/30;
         t=(performance.now()-INIT_TIME)/1000;//システム系の処理
         //リセット処理
         document.getElementById("myCanvas").width=document.getElementById("wrapper").scrollWidth;
@@ -59,17 +119,9 @@ function init() {
         canvasHeight=document.getElementById("myCanvas").height;
         ctx2d.clearRect(0,0,ctx2d.width,ctx2d.height);
         fadein2d.clearRect(0,0,fadein2d.width,fadein2d.height);
-/*
-        if(document.getElementById("fadeinCanvas").width < 1020){
-            ctx2d.fillStyle="rgba(139,88,31,0.2)";
-            ctx2d.fillRect(0,0,canvasWidth,canvasHeight);
-        } else{
-            ctx2d.fillStyle="rgba(59,63,60,0.2)";
-            ctx2d.fillRect(0,0,canvasWidth/2,canvasHeight);
-            ctx2d.fillStyle="rgba(139,88,31,0.2)";
-            ctx2d.fillRect(canvasWidth/2,0,canvasWidth/2,canvasHeight);
-        }
-*/
+        
+        processBars();
+
         if(nextPage!=""){ //遷移時
             let t2=performance.now()-nextPageLP;
             fadein2d.fillStyle="rgba(0,0,0," +(t2/1000)+")";
@@ -80,7 +132,7 @@ function init() {
                 if(nextPage != undefined) window.location.assign(localStorage.getItem("nextPage"));
             }
         }
-
+        ctx2d.lineWidth=2;
         ctx2d.fillStyle="rgba(59,63,60,0.2)";
         ctx2d.fillRect(0,0,canvasWidth,canvasHeight);
         ctx2d.fillStyle="rgba(10,16,13,0.4)";

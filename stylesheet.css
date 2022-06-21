@@ -92,7 +92,7 @@
     font-family:'Poiret One',cursive;
     display:block;
     padding:7px;
-    background-color: rgba(0,0,0,0.8);
+    background-color: rgba(0,0,0,0.7);
 }
 
 @media (max-width:1020px) { /* For smartphone*/
