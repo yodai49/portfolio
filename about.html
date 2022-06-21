@@ -5,41 +5,42 @@
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&family=Red+Hat+Mono:wght@500&family=Spartan:wght@300&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet"><html>
 <html>
     <body>
+        <div class="loading" id="loading"></div>
+        <script src="./loading.js"></script>
+        <div class="header">
+            <a id="prev_buttons1" href="./index.html"><img title="./index.html" src="./imgs/icon.png" class="header-icon"></a>
+            <a href="./index.html" class="header-txt" href="./index.html">toruthi</a>
+            <a href="about.html" class="header-nm-button-pc header-button-pc-1">
+                <span class="hb-nm-normal" href="./about.html">ABOUT</span>
+            </a>
+            <a href="works.html" class="header-button-pc header-button-pc-2">
+                <span href="works.html" class="hb-normal">W</span>
+                <span href="works.html" class="hb-hover">WORKS</span>
+            </a>
+            <a href="songs.html" class="header-button-pc header-button-pc-3">
+                <span href="songs.html" class="hb-normal">S</span>
+                <span href="songs.html" class="hb-hover">SONGS</span>
+            </a>
+            <a href="typing.html" class="header-button-pc header-button-pc-4">
+                <span href="typing.html" class="hb-normal">T</span>
+                <span href="typing.html" class="hb-hover">TYPING</span>
+            </a>
+            <div class="header-button-sp">
+                <input type="checkbox" id="menu-btn-check">
+                <label for="menu-btn-check" class="menu-btn"><span></span></label>
+                <div class="menu-content">
+                    <a class="menu-link menu-link-1" href="./about.html">ABOUT</a>
+                    <a class="menu-link menu-link-2" href="./works.html">WORKS</a>
+                    <a class="menu-link menu-link-3" href="./songs.html">SONGS</a>
+                    <a class="menu-link menu-link-4" href="./typing.html">TYPING</a>
+                </div>
+            </div>
+        </div>
         <div class="ovwra">
             <head>
                 <meta charset="utf-8"/>
                 <meta name="viewport">
             </head>
-
-            <div class="header">
-                <a id="prev_buttons1" href="./index.html"><img title="./index.html" src="./imgs/icon.png" class="header-icon"></a>
-                <a href="./index.html" class="header-txt" href="./index.html">toruthi</a>
-                <a href="about.html" class="header-nm-button-pc header-button-pc-1">
-                    <span class="hb-nm-normal" href="./about.html">ABOUT</span>
-                </a>
-                <a href="works.html" class="header-button-pc header-button-pc-2">
-                    <span href="works.html" class="hb-normal">W</span>
-                    <span href="works.html" class="hb-hover">WORKS</span>
-                </a>
-                <a href="songs.html" class="header-button-pc header-button-pc-3">
-                    <span href="songs.html" class="hb-normal">S</span>
-                    <span href="songs.html" class="hb-hover">SONGS</span>
-                </a>
-                <a href="typing.html" class="header-button-pc header-button-pc-4">
-                    <span href="typing.html" class="hb-normal">T</span>
-                    <span href="typing.html" class="hb-hover">TYPING</span>
-                </a>
-                <div class="header-button-sp">
-                    <input type="checkbox" id="menu-btn-check">
-                    <label for="menu-btn-check" class="menu-btn"><span></span></label>
-                    <div class="menu-content">
-                        <a class="menu-link menu-link-1" href="./about.html">ABOUT</a>
-                        <a class="menu-link menu-link-2" href="./works.html">WORKS</a>
-                        <a class="menu-link menu-link-3" href="./songs.html">SONGS</a>
-                        <a class="menu-link menu-link-4" href="./typing.html">TYPING</a>
-                    </div>
-                </div>
-            </div>
             <header id="wrapper" class="titleContainer">
                 <canvas class="fadein" id="fadeinCanvas"></canvas>
                 <div class="dammy-fadein" id="dammy-fadein"></div>
