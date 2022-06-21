@@ -50,7 +50,7 @@
     padding:10px;
 }
 .button-wrapper{
-    width:24vh;
+    width:12ch;
     position:absolute;
     z-index:1;
     top:0;
@@ -58,10 +58,9 @@
     transition:all 0.3s;
 }
 .buttons{
-    position:absolute;
+    position:relative;
     text-align:center;
-    width:16vh;
-    height:12vh;
+    height:10vh;
     right:0px;
     display: flex;
     justify-content: center;
@@ -71,18 +70,7 @@
     letter-spacing:3px;
     transition:all 0.3s;
     padding-right:5px;
-}
-.button-1{
-    top:2vh;
-}
-.button-2{
-    top:12vh;
-}
-.button-3{
-    top:22vh;
-}
-.button-4{
-    top:32vh;
+    margin-right:0px;
 }
 .bt-normal:hover{
     transition:all 0.3s;

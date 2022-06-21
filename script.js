@@ -29,7 +29,6 @@ document.getElementById("prev_buttons1").addEventListener('click',function(event
 window.addEventListener('load', init); //ロードイベント登録
 window.addEventListener('DOMContentLoaded', function(){ ///キー入力イベント登録
     window.addEventListener("keydown", function(e){
-      keypress(e.key,e.keyCode);
     });
 });
 window.addEventListener('mousemove', function (e) { //マウスが動いた時
@@ -108,10 +107,10 @@ function init() {
         var drawTxt=TITLE_TEXT[0][2];
 
         var rectSize=Math.min(document.getElementById("myCanvas").width*0.7,document.getElementById("myCanvas").height-180);
-        if(document.getElementById("myCanvas").width<1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
+        if(document.getElementById("myCanvas").width<=1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
         var rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
         var rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
-        if(rectTop+rectSize>=document.getElementById("myCanvas").height*0.74 && document.getElementById("myCanvas").width<1020){
+        if(rectTop+rectSize>=document.getElementById("myCanvas").height*0.74 && document.getElementById("myCanvas").width<=1020){
             rectSize/=1.5;
             rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
             rectTop=(document.getElementById("myCanvas").height-rectSize)/2;

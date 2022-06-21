@@ -326,6 +326,15 @@ h3{
     display:inline-block;
     vertical-align: top;
  }
+ .typingLink{
+    color:#999;
+    padding-right:0.8ch;
+    transition:all 0.3s;
+ }
+ .typingLink:hover{
+    color:#444;
+    transition:all 0.3s;
+ }
  .career_typing{
     color:rgba(0,0,0,1);
     width:70vw;
@@ -503,6 +512,7 @@ h3{
     border-left: solid 6px #D9A223;
     white-space:nowrap;
     font-size:0.7rem;
+    cursor:default;
 }
 .year{
     color:#999999;
@@ -560,11 +570,13 @@ h3{
         margin-bottom:60px;
     }
     .career-text{
-        width:90vw;
+        width:auto;
         left:0;
         right:0;
         margin:auto;
         height:auto;
+        padding-left:1ch;
+        padding-right:1ch;
         line-height:4rem;
     }
     .mypic{
@@ -605,26 +617,30 @@ h3{
         border-left:none;
         line-height:1.5rem;
     }
+    .typingLink{
+        text-align:center;
+    }
+    .typingHandle{
+        text-align:left;
+    }
     .career_typing{
         color:rgba(0,0,0,1);
-        width:90vw;
+        width:100%;
         padding:0;
-        margin:5vw;
+        margin:0;
         display:inline-block;
         vertical-align: top; 
     }
     .career_table{
         text-align:left;
         margin:0;
-        margin-bottom:30px;
         margin-left:5vw;
         margin-right:0px;
         width:90vw;
         padding:0;
         padding-top:40px;
-        padding-bottom:30px;
         left:5vw;
-        line-height:2rem;
+        line-height:1.3rem;
      }
      .career_table th{
          padding-bottom:10px;
@@ -644,9 +660,10 @@ h3{
     }
     .typing_score_table{
         table-layout: fixed;
-        width:90vw;
+        width:100%;
         margin:0;
         padding:0;
+        padding-bottom:30px;
         text-align:center;
         font-family: 'Zen Kaku Gothic Antique', sans-serif;
     }
