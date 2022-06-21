@@ -172,15 +172,20 @@ span{
     margin:0;
     padding:0;
 }
-.twitter_logo{
+.iconContainer{
     position:absolute;
-    width:max(36px,4vh);
     right:0;
     bottom:0;
-    padding-bottom:36px;
-    padding-right:24px;
-    z-index:10;
-    transition:all 0.3s;
+    padding-right:10px;
+}
+.twitter_logo{
+    padding-bottom:26px;
+}
+.mail_logo{
+    padding-bottom:23px;
+}
+.github_logo{
+    padding-bottom:25px;
 }
 .twitter_logo:hover{
     padding-bottom:42px;
@@ -188,26 +193,19 @@ span{
 .mail_logo:hover{
     padding-bottom:39px;
 }
-.mail_logo{
-    position:absolute;
-    width:max(36px,4vh);
-    right:max(72px,8vh);
-    bottom:0;
-    padding-bottom:33px;
-    padding-right:20px;
-    z-index:10;
-    transition:all 0.3s;
-}
-.github_logo{
-    position:absolute;
-    width:max(36px,4vh);
-    right:max(108px,12vh);
-    bottom:0;
-    padding-bottom:35px;
-    padding-right:50px;
-    z-index:10;
-    transition:all 0.3s;
-}
 .github_logo:hover{
     padding-bottom:42px;
+}
+.logos{
+    width:max(36px,4vh);
+    position:relative;
+    bottom:0;
+    z-index:10;
+    transition:all 0.3s;
+    margin-left:12px;
+    margin-right:12px;
+}
+.cashIframe{
+    width:0;
+    height:0;
 }

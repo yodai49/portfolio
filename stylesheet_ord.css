@@ -481,9 +481,9 @@ h3{
     position:absolute;
 }
 .vertical_border_new{
-    height:220px;
+    height:200px;
     width:100vw;
-    margin-top:100px;
+    margin-top:70px;
     position:relative;
 }
 .vertical_border_new:after{
