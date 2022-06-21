@@ -7,13 +7,6 @@ var loadedFlg=0;
 var drawTxtTemp="";
 var nextPage="";
 var nextPageLP=0;
-/*document.querySelectorAll("a").forEach(function(val){val.addEventListener('click',function(event){
-    event.preventDefault;
-    console.log("AAA");
-    nextPage=$(this).attr('href');
-    nextPageLP=performance.now();
-    document.getElementById("fadeinCanvas").style.zIndex=999;
-});});*/
 document.getElementById("prev_buttons1").addEventListener('click',function(event){
     nextPage=event.target.title;
     localStorage.setItem("nextPage",nextPage);
@@ -52,6 +45,11 @@ function init() {
         fadein2d.clearRect(0,0,fadein2d.width,fadein2d.height);
         fadein2d.fillStyle="rgba(0,0,0,"+ Math.min(1,Math.max(0,1-(t-0.8)))+")";
         if(t >= 0.8){
+            fadein2d.fillStyle="rgba(0,0,0,"+ Math.min(1,Math.max(0,1-(t-0.8)))/3+")";
+            for(var i = 0;i < 10;i++){
+                fadein2d.fillRect(canvasWidth*(i/20+1-Math.max(0,1-(t-0.8))),0,canvasWidth,canvasHeight);
+            }
+/*
             if(drawTxtTemp=="ABOUT"){
                 fadein2d.fillStyle="rgba(0,0,0,"+ Math.min(1,Math.max(0,1-(t-0.8)))/3+")";
                 for(var i = 0;i < 10;i++){
@@ -64,7 +62,8 @@ function init() {
                 }
             } else {
                 fadein2d.fillRect(0,0,canvasWidth,canvasHeight);
-            }    
+                fadein2d.fillRect(0,0,canvasWidth*(t-0.8),canvasHeight);
+            }   */ 
         } else{
             fadein2d.fillRect(0,0,canvasWidth,canvasHeight);
         }
@@ -82,7 +81,7 @@ function init() {
 
         let fadein_fontsize=18;
         fadein2d.font=fadein_fontsize+"mm "+"Poiret One, cursive";
-        fadein2d.fillStyle="rgba(255,255,255,"+ Math.min(1,Math.max(0,1-(t-0.8)/1.5))+")";
+        fadein2d.fillStyle="rgba(255,255,255,"+ Math.min(1,Math.max(0,1-(t-0.8)/1))+")";
         drawTxtTemp="";
         if(window.location.href.substr(-10) == "about.html"){ 
             drawTxtTemp="ABOUT";

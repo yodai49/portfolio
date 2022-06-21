@@ -86,13 +86,15 @@ function init() {
         ctx2d.fillRect(0,0,canvasWidth,canvasHeight);
         ctx2d.fillStyle="rgba(10,16,13,0.4)";
         var grad=ctx2d.createLinearGradient(0,0,canvasWidth*0.2,0);
-        grad.addColorStop(0.0,"rgba(10,16,13,0.6)");
+        grad.addColorStop(0.0,"rgba(10,16,13,0.7)");
+        grad.addColorStop(0.6,"rgba(10,16,13,0.4)");
         grad.addColorStop(1.0,"rgba(10,16,13,0.0)");
         ctx2d.fillStyle=grad;
         ctx2d.fillRect(0,0,canvasWidth*0.2,canvasHeight);
 
         var grad2=ctx2d.createLinearGradient(canvasWidth*0.8,0,canvasWidth,0);
-        grad2.addColorStop(1.0,"rgba(10,16,13,0.6)");
+        grad2.addColorStop(1.0,"rgba(10,16,13,0.7)");
+        grad2.addColorStop(0.4,"rgba(10,16,13,0.4)");
         grad2.addColorStop(0.0,"rgba(10,16,13,0.0)");
         ctx2d.fillStyle=grad2;
 
@@ -105,7 +107,7 @@ function init() {
 
         var drawTxt=TITLE_TEXT[0][2];
 
-        var rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height-180);
+        var rectSize=Math.min(document.getElementById("myCanvas").width*0.7,document.getElementById("myCanvas").height-180);
         if(document.getElementById("myCanvas").width<1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
         var rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
         var rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
@@ -119,7 +121,7 @@ function init() {
         ctx2d.font=FONT_SIZE + "px "+ CUR_FONTNAME;
         ctx2d.textBaseline = "top";
 
-        ctx2d.fillStyle="rgba(0,0,0,0.5)";
+        ctx2d.fillStyle="rgba(0,0,0,0.7)";
         ctx2d.fillRect(rectLeft,rectTop,rectSize,rectSize);
         ctx2d.strokeStyle="rgba(255,255,255,1)";
         ctx2d.strokeRect(rectLeft,rectTop,rectSize,rectSize);
