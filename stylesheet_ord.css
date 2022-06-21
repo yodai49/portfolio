@@ -4,7 +4,7 @@
     transition:all 0.3s;
 }
 body{
-    background-color:rgba(242,242,242,1);
+    background-color:rgba(235,235,235,1);
     font-family:'Spartan',monospace;
 }
 .wrapper{
@@ -312,9 +312,9 @@ h3{
     clip-path: polygon(0 150px, 100% 0, 100% 100%, 0 100%); 
 }
  .mypic{
-    width:max(400px,30vw);
-    height:max(400px,30vw);
-    margin-left:10vw;
+    width:max(370px,40vh);
+    height:max(370px,40vh);
+    margin-left:15vw;
     margin-bottom:50px;
     vertical-align: top;
     background:transparent;
@@ -325,6 +325,15 @@ h3{
     margin-left:8px;
     display:inline-block;
     vertical-align: top;
+ }
+ .typingLink{
+    color:#999;
+    padding-right:0.8ch;
+    transition:all 0.3s;
+ }
+ .typingLink:hover{
+    color:#444;
+    transition:all 0.3s;
  }
  .career_typing{
     color:rgba(0,0,0,1);
@@ -382,9 +391,10 @@ h3{
     font-size:0.8rem;
 }
 .career-dtl{
-    margin:25px;
+    margin-left:25px;
     margin-bottom:30px;
     margin-top:40px;
+    margin-right:0px;
     padding-left:10px;
     border-left-color:#000000;
     border-left-width:1px;
@@ -502,6 +512,7 @@ h3{
     border-left: solid 6px #D9A223;
     white-space:nowrap;
     font-size:0.7rem;
+    cursor:default;
 }
 .year{
     color:#999999;
@@ -555,15 +566,17 @@ h3{
     .txt-center{
         vertical-align: top;
         position:relative;
-        margin-top:120px;
-        margin-bottom:120px;
+        margin-top:60px;
+        margin-bottom:60px;
     }
     .career-text{
-        width:90vw;
+        width:auto;
         left:0;
         right:0;
         margin:auto;
         height:auto;
+        padding-left:1ch;
+        padding-right:1ch;
         line-height:4rem;
     }
     .mypic{
@@ -602,28 +615,32 @@ h3{
         margin-top:120px;
         text-align:center;
         border-left:none;
-        line-height:4rem;
+        line-height:1.5rem;
+    }
+    .typingLink{
+        text-align:center;
+    }
+    .typingHandle{
+        text-align:left;
     }
     .career_typing{
         color:rgba(0,0,0,1);
-        width:90vw;
+        width:100%;
         padding:0;
-        margin:5vw;
+        margin:0;
         display:inline-block;
         vertical-align: top; 
     }
     .career_table{
         text-align:left;
         margin:0;
-        margin-bottom:30px;
         margin-left:5vw;
         margin-right:0px;
         width:90vw;
         padding:0;
         padding-top:40px;
-        padding-bottom:30px;
         left:5vw;
-        line-height:4rem;
+        line-height:1.3rem;
      }
      .career_table th{
          padding-bottom:10px;
@@ -643,9 +660,10 @@ h3{
     }
     .typing_score_table{
         table-layout: fixed;
-        width:90vw;
+        width:100%;
         margin:0;
         padding:0;
+        padding-bottom:30px;
         text-align:center;
         font-family: 'Zen Kaku Gothic Antique', sans-serif;
     }
