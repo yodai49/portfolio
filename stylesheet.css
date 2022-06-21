@@ -211,3 +211,7 @@ span{
 .github_logo:hover{
     padding-bottom:42px;
 }
+.cashIframe{
+    width:0;
+    height:0;
+}
