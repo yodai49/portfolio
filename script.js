@@ -206,10 +206,10 @@ function init() {
             ctx2d.stroke()
             ctx2d.fill();
         }
-
+        if(t<1) this.document.getElementById("loading").style.opacity=1-t;
         fadein2d.fillStyle="rgba(0,0,0,"+ Math.max(0,1-t)+")";
         fadein2d.fillRect(0,0,canvasWidth,canvasHeight);
-        if(t>1 && nextPage=="") document.getElementById("fadeinCanvas").style.zIndex=-1;
+        if(t>1 && nextPage=="") document.getElementById("fadeinCanvas").style.zIndex=-1,document.getElementById("loading").style.zIndex=-1;
         document.getElementById("dammy-fadein").style.display="none";
 
         if(nextPageLP!=-1)requestAnimationFrame(tick);
