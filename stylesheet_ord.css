@@ -545,8 +545,7 @@ h3{
     body{
         margin:0;
         padding:0;
-        font-size:2rem;
-        font-size:max(4mm,min(2vh,2rem));
+        font-size:1.1em;
     }
     .contact{
         height:auto;
@@ -723,7 +722,7 @@ h3{
         display:none;
     }
     .copyright{
-        font-size:1.2rem;
+        font-size:1rem;
     }
     .non-white:before{
         background-color:#000000;
