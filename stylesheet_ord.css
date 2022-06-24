@@ -68,8 +68,7 @@ a{
     background-color:#000000;
 }
 .dammy-header{
-    height:7vh;
-    min-height:20mm;
+    height:max(8vh,20mm);
 }
 .header{
     background-color:rgba(59,63,60,0.9);
@@ -81,14 +80,13 @@ a{
     color:white;
     z-index:5;
     text-align:center;
-    height:7vh;
-    min-height:20mm;
+    height:max(8vh,20mm);
     width:100vw;
     box-shadow:0px 3px 4px rgba(0,0,0,0.5);
 }
 .header-txt{
     font-family:'Poiret One',cursive;
-    line-height:max(7vh,20mm);
+    line-height:max(8vh,20mm);
     font-size:2rem;
     vertical-align:middle;
     left:max(20mm,6vh);
@@ -100,8 +98,8 @@ a{
 .header-icon{
     position:fixed;
     height:5vh;
-    top:max(1vh,3mm);
-    left:max(1vh,3mm);
+    top:max(1.5vh,3mm);
+    left:max(1.5vh,3mm);
     min-height:14mm;
 }
 .header-icon:hover{
@@ -615,7 +613,7 @@ h3{
         margin-top:120px;
         text-align:center;
         border-left:none;
-        line-height:1.5rem;
+        line-height:1.5em;
     }
     .typingLink{
         text-align:center;
@@ -640,7 +638,7 @@ h3{
         padding:0;
         padding-top:40px;
         left:5vw;
-        line-height:1.3rem;
+        line-height:1.3em;
      }
      .career_table th{
          padding-bottom:10px;
@@ -764,11 +762,11 @@ h3{
         display:none;
     }
     .menu-btn {
-        position: fixed; /* header max(7vh,20mm) */
+        position: fixed; /* header max(8vh,20mm) */
         right:5mm;
         display: flex;
-        top:max(1vh,4mm);
-        width:max(6vh,8mm);
+        top:max(1.5vh,5mm);
+        width:max(5vh,8mm);
         height:max(5vh,8mm);
         justify-content: center;
         align-items: center;
@@ -803,6 +801,7 @@ h3{
         left: 100%;
         z-index: 110;
         background-color: rgba(0,0,0,0);
+        font-size:1.5em;
     }
     #menu-btn-check:checked ~ .menu-content {
         left: 0;
