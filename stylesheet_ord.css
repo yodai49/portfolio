@@ -349,10 +349,9 @@ h3{
  }
  .career_table{
     text-align:left;
-    margin-bottom:30px;
+    margin-bottom:60px;
     margin-left:15vw;
     padding-top:30px;
-    padding-bottom:30px;
     width:70vw;
  }
  .career_table th{
@@ -541,11 +540,11 @@ h3{
         width:100vw;
         margin:0;
         padding:0;
+        font-size:max(18px, 2vh);
     }
     body{
         margin:0;
         padding:0;
-        font-size:1.1em;
     }
     .contact{
         height:auto;
@@ -574,7 +573,6 @@ h3{
         height:auto;
         padding-left:1ch;
         padding-right:1ch;
-        line-height:4rem;
     }
     .mypic{
         width:50vw;
@@ -605,6 +603,7 @@ h3{
         margin-bottom:5vh;
         margin-top:-10px;
         line-height:150%;
+        text-align:center;
     }
     .career-dtl{
         margin:25px;
@@ -660,12 +659,9 @@ h3{
         width:100%;
         margin:0;
         padding:0;
-        padding-bottom:30px;
+        padding-bottom:60px;
         text-align:center;
         font-family: 'Zen Kaku Gothic Antique', sans-serif;
-    }
-    .typing_table_small{
-        font-size:min(1.5vh,1.5rem);
     }
     .iframe-songs{
         padding:0;
@@ -690,7 +686,7 @@ h3{
     .year{
         text-align:center;
         padding-top:0px;
-        padding-bottom:40px;
+        padding-bottom:0px;
     }
     .vertical_border{
         display:none;
@@ -698,17 +694,15 @@ h3{
     .works-dtl{
         border-left-color:black;
         border-left-style:none;
+        padding-left:0;
     }
     h1{
-        font-size:min(10vh,5rem);
-        padding:8vh;
-    }
-    h3{
-        font-size:min(6.5vh,3.5rem);
-        font-size:3.5rem;
+        font-size:4rem;
+        padding:7vh;
+        padding-bottom:5vh;
     }
     h2{
-        font-size:min(6vh,3.5rem);
+        font-size:2.5rem;
         padding-top:3vh;
         padding-bottom:1vh;
         margin-bottom:3vh;
@@ -721,8 +715,12 @@ h3{
     h2::before{
         display:none;
     }
+    h3{
+        font-size:2rem;
+    }
     .copyright{
-        font-size:1rem;
+        font-size:0.9rem;
+        z-index:1;
     }
     .non-white:before{
         background-color:#000000;
@@ -732,13 +730,13 @@ h3{
     }
     .tag{
         color:#000;
-        font-size:1.5rem;
         text-align:center;
         position:relative;
         left:0;
         right:0;
         margin:auto;
-        display:none;
+        padding:0.4ch;
+        margin-top:1ch;
     }
     .header-button-pc{
         display:none;
@@ -754,7 +752,7 @@ h3{
     .header-txt{
         left:0;
         right:0;
-        font-size:min(4vh,4rem);
+        font-size:2rem;
         margin:auto;
     }    
     .header-nm-button-pc{
@@ -800,7 +798,7 @@ h3{
         left: 100%;
         z-index: 110;
         background-color: rgba(0,0,0,0);
-        font-size:1.5em;
+        font-size:1.5rem;
     }
     #menu-btn-check:checked ~ .menu-content {
         left: 0;
