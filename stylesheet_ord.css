@@ -6,6 +6,8 @@
 body{
     background-color:rgba(235,235,235,1);
     font-family:'Spartan',monospace;
+    font-weight:lighter;
+    min-height:calc(100vh - 98px);
 }
 .wrapper{
     width:100%;
@@ -36,7 +38,6 @@ span{
     margin:0;
     width:100%;
     position:absolute;
-    bottom:0;
     z-index:50;
 }
 .footer-fix{
@@ -216,9 +217,9 @@ h1{
     text-align:center;
     position:relative;
     align-items:center;
+    font-weight:300;
+    letter-spacing:8px;
     font-family:'Spartan',cursive;
-    font-weight:lighter;
-    letter-spacing:10px;
 }
 
 h2{
@@ -226,7 +227,8 @@ h2{
     position:relative;
     margin-bottom:3mm;
     font-family:'Spartan',cursive;
-    letter-spacing:8px;
+    letter-spacing:6px;
+    font-weight:600;
 }
 h2::before{
     content:"";
@@ -242,7 +244,8 @@ h3{
     padding-bottom:10px;
     padding-top:50px;
     text-align:center;
-    font-family:'Poiret One',cursive;
+    font-family:'Spartan',cursive;
+    font-weight:600;
     letter-spacing:5px;
 }
  .about-contents{
@@ -255,7 +258,6 @@ h3{
  .about-contents2{
     width:100%;
     position:relative;
-    padding-top:150px;
     background-image:  
     linear-gradient(90deg, rgba(206,202,172,0.8) 50%, transparent 0%), 
     linear-gradient(0deg, rgba(206,202,172,0.8) 50%, transparent 0%);
@@ -268,6 +270,12 @@ h3{
     clip-path: polygon(0 0, 100% 150px, 100% 100%, 0 100%); 
     z-index:-11;
  }
+ .PaddingForTilt{
+    padding-top:130px;
+ }
+ .backMarginMinus{
+    margin-top:-150px;
+ }
 .back-1{
     width:100%;
     position:relative;
@@ -277,16 +285,13 @@ h3{
     width:100%;
     position:relative;
     padding-top:200px;
-    padding-bottom:150px;
-    background-color:rgba(209,205,175,0.8);
-/*    background-image: radial-gradient( rgba(209,205,175,0.8) 2px,rgba(204,200,170,0.8) 2px);
-    background-size: 4px 4px;*/
-
+    padding-bottom:200px;
+    background-color:rgba(209,205,175,1);
     background-image:  
     linear-gradient(90deg, rgba(204,200,170,0.8) 50%, transparent 0%), 
     linear-gradient(0deg, rgba(209,205,175,0.8) 50%, transparent 0%);
-    background-position:  2px 0, 2px 0, 0 0, 0 0;
-    background-size: 2px 2px;
+    background-position:  3px 0, 3px 0, 0 0, 0 0;
+    background-size: 3px 3px;
     background-repeat: repeat;
 
     -webkit-clip-path: polygon(0 0, 100% 150px, 100% 100%, 0 100%);
@@ -295,10 +300,8 @@ h3{
     width:100%;
     position:relative;
     padding-top:200px;
-    margin-top:-150px;
-    padding-bottom:80px;
+    padding-bottom:180px;
     background-color:#B5B7AA;
-
     background-image:  
     linear-gradient(90deg, rgba(181,183,170,0.8) 50%, transparent 0%), 
     linear-gradient(0deg, rgba(178,180,167,0.8) 50%, transparent 0%);
@@ -308,6 +311,9 @@ h3{
 
     -webkit-clip-path: polygon(0 150px, 100% 0, 100% 100%, 0 100%);
     clip-path: polygon(0 150px, 100% 0, 100% 100%, 0 100%); 
+}
+.lastWork{
+    padding-bottom:30px;
 }
  .mypic{
     width:max(370px,40vh);
@@ -363,7 +369,8 @@ h3{
  }
  .career_table_jpn td{
     font-family: 'Zen Kaku Gothic Antique', sans-serif;
- }
+    padding-bottom:15px;
+}
 .typing_score_table td{
     border-bottom: solid 2px #aaaaaa;
     padding-left:5px;
@@ -526,13 +533,54 @@ h3{
     display:inline-block;
     vertical-align: top;
     width:100%;
-    padding-bottom:100px;
+    padding-bottom:50px;
 }
 .margin-typing{
     height:50px;
 }
 .career-text{
     line-height:2rem;
+}
+.each_works_picture_wrapper{
+    position:absolute;
+}
+.each_works_picture_exp{
+    background-color:black;
+    color:white;
+    text-align:center;
+    width:100%;
+    height:100%;
+}
+.loading{
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    background-color:rgba(0,0,0,1);
+    z-index:99999;
+ }
+ .loaded{
+    z-index:-99999;
+    display:none;
+ }
+.contactIconContainer{
+    right:0;
+    bottom:0;
+    margin:auto;
+    width:100%;
+    z-index:100;
+    padding-top:0px;
+    padding-bottom:60px;
+    position:relative;
+    text-align:center;
+}
+.contactLogos{
+    width:max(36px,4vh);
+    position:relative;
+    bottom:0;
+    z-index:100;
+    transition:all 0.3s;
+    margin-left:12px;
+    margin-right:12px;
 }
  @media (max-width:1020px) { /* For smartphone*/
     html{
@@ -562,8 +610,8 @@ h3{
     .txt-center{
         vertical-align: top;
         position:relative;
-        margin-top:60px;
-        margin-bottom:60px;
+        margin-top:30px;
+        margin-bottom:30px;
     }
     .career-text{
         width:auto;
@@ -697,7 +745,7 @@ h3{
         padding-left:0;
     }
     h1{
-        font-size:4rem;
+        font-size:3rem;
         padding:7vh;
         padding-bottom:5vh;
     }
@@ -847,15 +895,7 @@ h3{
     .each_songs:after{
         height:0;
     }
+    .contactIconContainer{
+        padding-bottom:80px;
+    }
  } 
- .loading{
-    position:fixed;
-    width:100vw;
-    height:100vh;
-    background-color:rgba(0,0,0,1);
-    z-index:99999;
- }
- .loaded{
-    z-index:-99999;
-    display:none;
- }
