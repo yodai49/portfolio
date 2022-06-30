@@ -4,6 +4,9 @@
     font-size:16px;
     -webkit-text-size-adjust:100%;
 }
+.body{
+    min-width:320px;
+}
 .dammy-fadein{
     width:100%;
     height:100%;
@@ -14,8 +17,8 @@
     background-color:#000000;
 }
 .backImg{
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
 }
 .header{
     font-size:120px;
@@ -31,8 +34,8 @@
 }
 .titleContainer{
     background:url("./imgs/IMG_0425.jpg") center/cover;
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
     height: -webkit-fill-available;
     min-height:300px;
     min-width:300px;
@@ -41,8 +44,8 @@
     padding:0;
 }
 .wrapper{
-    width:100vw;
-    height:100vh;
+    width:100%;
+    height:100%;
 }
 .copyright{
     text-align:center;
@@ -79,8 +82,8 @@
 }
 .bt-normal{
     transition:all 0.3s;
-    padding-top:3vh;
-    padding-bottom:3vh;
+    padding-top:3%;
+    padding-bottom:3%;
 }
 .bt-mobile{
     display:none;
@@ -94,68 +97,6 @@
     display:block;
     padding:7px;
     background-color: rgba(0,0,0,0.7);
-}
-
-@media (max-width:1020px) { /* For smartphone*/
-    *{
-        font-size:2vh;
-    }
-	.bt-mobile {
-		display: inline;
-        position:absolute;
-        transition:all 0.3s;
-        background-color:rgba(53, 30, 0, 0.8);
-        padding:1ch;
-        margin:0;
-        width:9ch;
-        text-align: center;
-	}
-    .bt-mobile:hover{
-        display:inline;
-        background-color:rgba(83, 60, 0, 0.8);
-    }
-    .bt-normal{
-        display:none;
-    }
-    .buttons{
-        width:9ch;
-        height:20%;
-        position:absolute;
-    }
-    .buttons:hover .bt-mobile{
-        display:inline;
-        width:9ch;
-        padding:1ch;
-        position:absolute;
-    }
-    .button-wrapper{
-        background-color:rgba(0,0,0,0);
-        position:absolute;
-        padding:0;
-        z-index:1;
-        top:75%;
-        right:0;
-        left:0;
-        width:100%;
-        height:15vh;
-        margin:0;
-    }
-    .button-1{
-        top:0%;
-        left:calc(50% - 11ch);
-    }
-    .button-2{
-        top:53%;
-        left:calc(50% - 11ch);
-    }
-    .button-3{
-        top:0%;
-        left:calc(50% + 2ch);
-    }
-    .button-4{
-        top:53%;
-        left:calc(50% + 2ch);
-    }
 }
 a{
     text-decoration-line:none;
@@ -263,8 +204,93 @@ span{
     height:100%;
     background-color:rgba(0,0,0,1);
     z-index:999999;
- }
- .loaded{
+}
+.loaded{
     z-index:-99999;
     display:none;
- }
+}
+.greetingBack{
+    background-color:rgba(0,0,0,0.7);
+    position:absolute;
+    top:calc(50% - min(25vw,37vh));
+    left:calc(50% - min(25vw,37vh));
+    width:min(50vw,74vh);
+    height:min(50vw,74vh);
+    display:flex;
+    align-items:center;
+    z-index:30;
+}
+.greetingText{
+    font-weight:800;
+    font-size:min(7.5vw,11.1vh);
+}
+.greetingTextGroup{
+    width:100%;
+    font-family:'Spartan';
+    text-align:center;
+    color:#bb8800;    
+}
+@media (max-width:1020px) { /* For smartphone*/
+    *{
+        font-size:2vh;
+    }
+	.bt-mobile {
+		display: inline;
+        position:absolute;
+        transition:all 0.3s;
+        background-color:rgba(53, 30, 0, 0.8);
+        padding:1ch;
+        margin:0;
+        width:9ch;
+        text-align: center;
+	}
+    .bt-mobile:hover{
+        background-color:rgba(83, 60, 0, 0.8);
+    }
+    .bt-normal{
+        display:none;
+    }
+    .buttons{
+        width:9ch;
+        height:20%;
+        position:absolute;
+    }
+    .button-wrapper{
+        background-color:rgba(0,0,0,0);
+        position:absolute;
+        padding:0;
+        margin:0;
+        z-index:1;
+        top:calc(52% + min(35vw,20vh));
+        right:0;
+        left:0;
+        width:100%;
+        height:15vh;
+    }
+    .button-1{
+        top:0%;
+        left:calc(50% - 11ch);
+    }
+    .button-2{
+        top:53%;
+        left:calc(50% - 11ch);
+    }
+    .button-3{
+        top:0%;
+        left:calc(50% + 2ch);
+    }
+    .button-4{
+        top:53%;
+        left:calc(50% + 2ch);
+    }
+    .greetingBack{
+        top:calc(45% - min(40vw,20vh));
+        left:calc(50% - min(35vw,20vh));
+        width:min(70vw,40vh);
+        height:min(70vw,40vh);
+        z-index:30;
+    }
+    .greetingText{
+        font-size:min(10.5vw,6vh);
+    }
+}

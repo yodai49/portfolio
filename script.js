@@ -3,7 +3,8 @@ var animationcnt=0; //アニメーションのカウンター 1でスタート -
 var lastPerformance=performance.now(); //パフォーマンス
 var t = 0; //開いてからの経過時間 ミリ秒
 var INIT_TIME;
-const TITLE_TEXT=[["I'm here","to", "innovate."]]
+const TITLE_TEXT=[["I'm here","to", "innovate."]];
+const DETAIL_TEXT="Hello, this page is a portfolio of toruthi. I am developer, composer, and typist.";
 const TITLE_MAX_LENGTH = 7;
 const MONOS_FONTNAME="Red Hat Mono, monospace";
 const SS_FONTNAME="Spartan, sans-serif";
@@ -20,13 +21,13 @@ document.getElementById("prev_buttons1").addEventListener('click',function(event
     nextPage=event.target.title;
     localStorage.setItem("nextPage",nextPage);
     nextPageLP=performance.now();
-    document.getElementById("fadeinCanvas").style.zIndex=999;
+    document.getElementById("fadeinCanvas2").style.zIndex=999;
     event.preventDefault()
 })
+document.getElementById("detail_exp").textContent=DETAIL_TEXT;
 window.addEventListener('load', init); //ロードイベント登録
 window.addEventListener('DOMContentLoaded', function(){ ///キー入力イベント登録
-    window.addEventListener("keydown", function(e){
-    });
+    INIT_TIME=performance.now();
 });
 window.addEventListener('mousemove', function (e) { //マウスが動いた時
     var rect = e.target.getBoundingClientRect();
@@ -100,11 +101,11 @@ function init() {
     //ローディング処理////////////////////////////////////////
     canvasWidth=document.getElementById("myCanvas").width;
     canvasHeight=document.getElementById("myCanvas").height;
-    INIT_TIME=performance.now();
 
     //2Dの処理
     ctx2d=document.getElementById("myCanvas").getContext("2d");
     fadein2d=document.getElementById("fadeinCanvas").getContext("2d");
+    fadein2d2=document.getElementById("fadeinCanvas2").getContext("2d");
     tick();
 
     function tick() {
@@ -120,13 +121,14 @@ function init() {
         canvasHeight=document.getElementById("myCanvas").height;
         ctx2d.clearRect(0,0,ctx2d.width,ctx2d.height);
         fadein2d.clearRect(0,0,fadein2d.width,fadein2d.height);
+        fadein2d2.clearRect(0,0,fadein2d.width,fadein2d.height);
         
         processBars();
 
         if(nextPage!=""){ //遷移時
             let t2=performance.now()-nextPageLP;
-            fadein2d.fillStyle="rgba(0,0,0," +(t2/1000)+")";
-            fadein2d.fillRect(0,0,canvasWidth*(t2/500),canvasHeight);
+            fadein2d2.fillStyle="rgba(0,0,0," +(t2/1000)+")";
+            fadein2d2.fillRect(0,0,canvasWidth*(t2/2000),canvasHeight);
             if(t2 > 1000) {
                 nextPage=localStorage.getItem("nextPage");
                 nextPageLP=-1;
@@ -160,7 +162,7 @@ function init() {
         var drawTxt=TITLE_TEXT[0][2];
 
         var rectSize=Math.min(document.getElementById("myCanvas").width*0.7,document.getElementById("myCanvas").height-180);
-        if(document.getElementById("myCanvas").width<=1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
+        var FONT_SIZE=rectSize/7;/*        if(document.getElementById("myCanvas").width<=1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
         var rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
         var rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
         if(rectTop+rectSize>=document.getElementById("myCanvas").height*0.71 && document.getElementById("myCanvas").width<=1020){
@@ -169,31 +171,31 @@ function init() {
             rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
         }
 
-        var FONT_SIZE=rectSize/7;
+        
         ctx2d.font=FONT_SIZE + "px "+ CUR_FONTNAME;
         ctx2d.textBaseline = "top";
 
         ctx2d.fillStyle="rgba(0,0,0,0.7)";
         ctx2d.fillRect(rectLeft,rectTop,rectSize,rectSize);
         ctx2d.strokeStyle="rgba(255,255,255,1)";
-        ctx2d.strokeRect(rectLeft,rectTop,rectSize,rectSize);
+        ctx2d.strokeRect(rectLeft,rectTop,rectSize,rectSize);*/
 
         for(var i = 0;i < 3;i++){
             var titleTempSum=0;
             if(i>=1) titleTempSum+=TITLE_TEXT[showMsgNum][0].length;
             if(i>=2) titleTempSum+=TITLE_TEXT[showMsgNum][1].length;
-            drawTxt=TITLE_TEXT[showMsgNum][i].substr(0,Math.max(0,Math.floor(t*20)-titleTempSum));
+            drawTxt=TITLE_TEXT[showMsgNum][i].substr(0,Math.max(0,Math.floor(t*13)-titleTempSum));
             inputChar=String.fromCharCode(65+Math.floor(Math.random()*25));
 
             ctx2d.fillStyle="rgba(9,13,10,0.8)";//underline
             titleTextPosLeft=(document.getElementById("myCanvas").width-ctx2d.measureText(drawTxt).width)/2;
             titleTextPosTop=FONT_SIZE*1.2*(i-1)+(document.getElementById("myCanvas").height-FONT_SIZE)/2;
-            if(0<Math.max(0,Math.floor(t*20)-titleTempSum) && Math.max(0,Math.floor(t*20)-titleTempSum)<TITLE_TEXT[showMsgNum][i].length) drawTxt+=inputChar;
+//            if(0<Math.max(0,Math.floor(t*20)-titleTempSum) && Math.max(0,Math.floor(t*20)-titleTempSum)<TITLE_TEXT[showMsgNum][i].length) drawTxt+=inputChar;
 
-            ctx2d.fillStyle="rgba(217,162,35,1)"; //text
-            ctx2d.fillText(drawTxt,titleTextPosLeft,titleTextPosTop);
+/*            ctx2d.fillStyle="rgba(217,162,35,1)"; //text
+            ctx2d.fillText(drawTxt,titleTextPosLeft,titleTextPosTop);*/
+            document.getElementById("greetingText" + (i+1)).textContent=drawTxt;
         }
-
 //Mouse Cursor
         prevMouseX=(2*prevMouseX+mouseX)/3;
         prevMouseY=(2*prevMouseY+mouseY)/3;
@@ -209,7 +211,7 @@ function init() {
         if(t<1) this.document.getElementById("loading").style.opacity=1-t;
         fadein2d.fillStyle="rgba(0,0,0,"+ Math.max(0,1-t)+")";
         fadein2d.fillRect(0,0,canvasWidth,canvasHeight);
-        if(t>1 && nextPage=="") document.getElementById("fadeinCanvas").style.zIndex=-1,document.getElementById("loading").style.zIndex=-1;
+        if(t>1 && nextPage=="") document.getElementById("fadeinCanvas").style.zIndex=-1,document.getElementById("fadeinCanvas2").style.zIndex=-1,document.getElementById("loading").style.zIndex=-1;
         document.getElementById("dammy-fadein").style.display="none";
 
         if(nextPageLP!=-1)requestAnimationFrame(tick);
