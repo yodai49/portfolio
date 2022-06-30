@@ -156,29 +156,11 @@ function init() {
 
         const TITLE_MSG_SEC=3;
         var showMsgNum=Math.floor(t/TITLE_MSG_SEC)%TITLE_TEXT.length;
-        var titleTextPosLeft=50;
-        var titleTextPosTop= 50;
 
         var drawTxt=TITLE_TEXT[0][2];
 
         var rectSize=Math.min(document.getElementById("myCanvas").width*0.7,document.getElementById("myCanvas").height-180);
-        var FONT_SIZE=rectSize/7;/*        if(document.getElementById("myCanvas").width<=1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
-        var rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
-        var rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
-        if(rectTop+rectSize>=document.getElementById("myCanvas").height*0.71 && document.getElementById("myCanvas").width<=1020){
-            rectSize/=1.5;
-            rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
-            rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
-        }
-
-        
-        ctx2d.font=FONT_SIZE + "px "+ CUR_FONTNAME;
-        ctx2d.textBaseline = "top";
-
-        ctx2d.fillStyle="rgba(0,0,0,0.7)";
-        ctx2d.fillRect(rectLeft,rectTop,rectSize,rectSize);
-        ctx2d.strokeStyle="rgba(255,255,255,1)";
-        ctx2d.strokeRect(rectLeft,rectTop,rectSize,rectSize);*/
+        var FONT_SIZE=rectSize/7;
 
         for(var i = 0;i < 3;i++){
             var titleTempSum=0;
@@ -186,14 +168,6 @@ function init() {
             if(i>=2) titleTempSum+=TITLE_TEXT[showMsgNum][1].length;
             drawTxt=TITLE_TEXT[showMsgNum][i].substr(0,Math.max(0,Math.floor(t*13)-titleTempSum));
             inputChar=String.fromCharCode(65+Math.floor(Math.random()*25));
-
-            ctx2d.fillStyle="rgba(9,13,10,0.8)";//underline
-            titleTextPosLeft=(document.getElementById("myCanvas").width-ctx2d.measureText(drawTxt).width)/2;
-            titleTextPosTop=FONT_SIZE*1.2*(i-1)+(document.getElementById("myCanvas").height-FONT_SIZE)/2;
-//            if(0<Math.max(0,Math.floor(t*20)-titleTempSum) && Math.max(0,Math.floor(t*20)-titleTempSum)<TITLE_TEXT[showMsgNum][i].length) drawTxt+=inputChar;
-
-/*            ctx2d.fillStyle="rgba(217,162,35,1)"; //text
-            ctx2d.fillText(drawTxt,titleTextPosLeft,titleTextPosTop);*/
             document.getElementById("greetingText" + (i+1)).textContent=drawTxt;
         }
 //Mouse Cursor

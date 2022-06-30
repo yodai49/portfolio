@@ -64,9 +64,6 @@ function init() {
             }
         }
 
-        let fadein_fontsize=18;
-        fadein2d.font=fadein_fontsize+"mm "+"Poiret One, cursive";
-        fadein2d.fillStyle="rgba(255,255,255,"+ Math.min(1,Math.max(0,1-(t-0.8)/3))+")";
         drawTxtTemp="";
         if(window.location.href.substr(-10) == "about.html"){ 
             drawTxtTemp="ABOUT";
