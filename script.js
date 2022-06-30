@@ -160,7 +160,7 @@ function init() {
         var drawTxt=TITLE_TEXT[0][2];
 
         var rectSize=Math.min(document.getElementById("myCanvas").width*0.7,document.getElementById("myCanvas").height-180);
-        if(document.getElementById("myCanvas").width<=1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
+        var FONT_SIZE=rectSize/7;/*        if(document.getElementById("myCanvas").width<=1020) rectSize=Math.min(document.getElementById("myCanvas").width*0.8,document.getElementById("myCanvas").height*0.6);
         var rectLeft=(document.getElementById("myCanvas").width-rectSize)/2;
         var rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
         if(rectTop+rectSize>=document.getElementById("myCanvas").height*0.71 && document.getElementById("myCanvas").width<=1020){
@@ -169,14 +169,14 @@ function init() {
             rectTop=(document.getElementById("myCanvas").height-rectSize)/2;
         }
 
-        var FONT_SIZE=rectSize/7;
+        
         ctx2d.font=FONT_SIZE + "px "+ CUR_FONTNAME;
         ctx2d.textBaseline = "top";
 
         ctx2d.fillStyle="rgba(0,0,0,0.7)";
         ctx2d.fillRect(rectLeft,rectTop,rectSize,rectSize);
         ctx2d.strokeStyle="rgba(255,255,255,1)";
-        ctx2d.strokeRect(rectLeft,rectTop,rectSize,rectSize);
+        ctx2d.strokeRect(rectLeft,rectTop,rectSize,rectSize);*/
 
         for(var i = 0;i < 3;i++){
             var titleTempSum=0;
@@ -190,8 +190,8 @@ function init() {
             titleTextPosTop=FONT_SIZE*1.2*(i-1)+(document.getElementById("myCanvas").height-FONT_SIZE)/2;
             if(0<Math.max(0,Math.floor(t*20)-titleTempSum) && Math.max(0,Math.floor(t*20)-titleTempSum)<TITLE_TEXT[showMsgNum][i].length) drawTxt+=inputChar;
 
-            ctx2d.fillStyle="rgba(217,162,35,1)"; //text
-            ctx2d.fillText(drawTxt,titleTextPosLeft,titleTextPosTop);
+/*            ctx2d.fillStyle="rgba(217,162,35,1)"; //text
+            ctx2d.fillText(drawTxt,titleTextPosLeft,titleTextPosTop);*/
         }
 
 //Mouse Cursor

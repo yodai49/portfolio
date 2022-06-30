@@ -319,7 +319,7 @@ h3{
  .mypic{
     width:max(370px,40vh);
     height:max(370px,40vh);
-    margin-left:15vw;
+    margin-left:calc(50% - max(370px,40vh));
     margin-bottom:50px;
     vertical-align: top;
     background:transparent;
@@ -516,8 +516,8 @@ h3{
     margin:2mm;
 }
 .iframe-songs{
-    padding-left:16%;
-    width:30%;
+    padding-left:6%;
+    width:40%;
     height:40vh;
 }
 .txt-center{
@@ -567,17 +567,6 @@ h3{
     min-width:440px;
     vertical-align:bottom;
     background-color:#B5B7AA;
-}
-.works_pic{
-    width:38vw;
-    min-width:480px;
-    position:absolute;
-    top:0;
-    display:inline-block;
-    z-index:50;
-}
-.works_pic:hover{
-    filter:brightness(50%);
 }
 .loading{
     position:fixed;
