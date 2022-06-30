@@ -611,7 +611,7 @@ h3{
     margin-left:12px;
     margin-right:12px;
 }
- @media (max-width:1020px) { /* For smartphone*/
+@media (max-width:1020px) { /* For smartphone*/
     html{
         -webkit-text-size-adjust: none;
         width:100vw;
@@ -774,6 +774,9 @@ h3{
     }
     .vertical_border{
         display:none;
+    }
+    .fadeinText{
+        font-size:18vw;
     }
     .works-dtl{
         border-left-color:black;
