@@ -86,9 +86,9 @@ function init() {
         if(window.location.href.substr(-10) == "about.html"){ 
             drawTxtTemp="ABOUT";
         }  else if(window.location.href.substr(-10) == "works.html"){ 
-            drawTxtTemp="WORKS";
-        } else if(window.location.href.substr(-10) == "songs.html"){
-            drawTxtTemp="SONGS";
+            drawTxtTemp="WORK";
+        } else if(window.location.href.substr(-10) == "piece.html"){
+            drawTxtTemp="PIECES";
         }  else if(window.location.href.substr(-11) == "typing.html"){ 
             drawTxtTemp="TYPING";
         } 
