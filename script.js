@@ -3,7 +3,7 @@ var animationcnt=0; //アニメーションのカウンター 1でスタート -
 var lastPerformance=performance.now(); //パフォーマンス
 var t = 0; //開いてからの経過時間 ミリ秒
 var INIT_TIME;
-const TITLE_TEXT=[["Welcome to","toruthi's", "portfolio."]]
+const TITLE_TEXT=[["I'm here","to", "innovate."]]
 const TITLE_MAX_LENGTH = 7;
 const MONOS_FONTNAME="Red Hat Mono, monospace";
 const SS_FONTNAME="Spartan, sans-serif";
