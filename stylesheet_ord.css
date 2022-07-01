@@ -230,13 +230,14 @@ a{
     padding-left:4mm;
     letter-spacing:5px;
 }
-.hugeA{
-    height:80vh;
-    max-height:100vw;
+.hugeCharacter{
     position:absolute;
+    z-index:-12;
+    font-size:max(100vh, 80vw);
+    font-family:"SpartanBold";
     top:20px;
     right:10mm;
-    z-index:-1;
+    color:#ddd;
 }
 h1{
     font-size:4rem;
