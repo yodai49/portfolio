@@ -31,15 +31,16 @@ window.addEventListener('load', function(){ ///ロードイベント登録
     init();
 });
 
-window.addEventListener("keypress",function(e){//キー入力
+document.addEventListener("keydown",function(e){//キー入力
     if(e.keyCode==8){
-        if(this.document.getElementById("greetingText").innerHTML.length > 18){
-            this.document.getElementById("greetingText").innerHTML= this.document.getElementById("greetingText").innerHTML.substr(0, this.document.getElementById("greetingText").innerHTML.length-1);
+        if(document.getElementById("greetingText").innerHTML.length > 18){
+            document.getElementById("greetingText").innerHTML= document.getElementById("greetingText").innerHTML.substr(0, document.getElementById("greetingText").innerHTML.length-1);
         }
-    } else if((" .,*".indexOf(e.key) != -1 || (e.keyCode>=65 && e.keyCode<= 90)||(e.keyCode>=97 && e.keyCode<= 122)) && this.document.getElementById("greetingText").clientWidth< this.document.getElementById("greetingBack").clientWidth){
-        this.document.getElementById("greetingText").innerHTML+=e.key;
+    } else if((" .,*".indexOf(e.key) != -1 || (e.keyCode>=65 && e.keyCode<= 90)||(e.keyCode>=97 && e.keyCode<= 122))){
+        document.getElementById("greetingText").innerHTML+=e.key;
     }
-})
+});
+
 
 window.addEventListener('mousemove', function (e) { //マウスが動いた時
     var rect = e.target.getBoundingClientRect();
@@ -166,14 +167,8 @@ function init() {
 
         ctx2d.fillRect(canvasWidth*0.8,0,canvasWidth*0.2,canvasHeight);
 
-        const TITLE_MSG_SEC=3;
-        var showMsgNum=Math.floor(t/TITLE_MSG_SEC)%TITLE_TEXT.length;
-
-        var drawTxt=TITLE_TEXT[0][2];
-
-        var rectSize=Math.min(document.getElementById("myCanvas").width*0.7,document.getElementById("myCanvas").height-180);
-        
-        if(t<3){
+        var drawTxt="";
+        if(t*10<TITLE_TEXT.length+1){
             drawTxt=TITLE_TEXT.substr(0,Math.max(0,Math.floor(t*10)-0));
             drawTxt=drawTxt.replace("+","<br>").replace("+","<br>");
             document.getElementById("greetingText").innerHTML=drawTxt;    
