@@ -1,3 +1,15 @@
+@font-face{
+    font-family: 'Spartan';
+    src:url("./fonts/LeagueSpartan-VariableFont_wght.ttf");
+}
+@font-face{
+    font-family: 'PoiretOne';
+    src:url("./fonts/PoiretOne-Regular.ttf");
+}
+@font-face{
+    font-family: 'ZenKakuGothic';
+    src:url("./fonts/ZenKakuGothicAntique-Light.ttf");
+}
 *{
     margin: 0;
     padding:0;
@@ -50,7 +62,7 @@
 .copyright{
     text-align:center;
     color:rgba(255,255,255,1);
-    font-family:'Spartan',monospace;
+    font-family:"Spartan",monospace;
     padding:10px;
 }
 .button-wrapper{
@@ -70,7 +82,7 @@
     justify-content: center;
     align-items: center;
     color:rgba(255,255,255,1);
-    font-family:'Poiret One',cursive;
+    font-family:"PoiretOne",cursive;
     letter-spacing:3px;
     transition:all 0.3s;
     padding-right:5px;
@@ -93,7 +105,7 @@
     position:absolute;
     margin:30px;
     z-index:60;
-    font-family:'Poiret One',cursive;
+    font-family:"PoiretOne",cursive;
     display:block;
     padding:7px;
     background-color: rgba(0,0,0,0.7);
@@ -150,6 +162,7 @@ span{
 .cashIframe{
     width:0;
     height:0;
+    display:none;
 }
 @keyframes preload_gen {
     0% {
@@ -226,7 +239,7 @@ span{
 }
 .greetingTextGroup{
     width:100%;
-    font-family:'Spartan';
+    font-family:"Spartan";
     text-align:center;
     color:#bb8800;    
 }
