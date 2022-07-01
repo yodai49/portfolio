@@ -25,9 +25,9 @@ document.getElementById("prev_buttons1").addEventListener('click',function(event
     event.preventDefault()
 })
 document.getElementById("detail_exp").textContent=DETAIL_TEXT;
-window.addEventListener('load', init); //ロードイベント登録
-window.addEventListener('DOMContentLoaded', function(){ ///キー入力イベント登録
+window.addEventListener('load', function(){ ///ロードイベント登録
     INIT_TIME=performance.now();
+    init();
 });
 window.addEventListener('mousemove', function (e) { //マウスが動いた時
     var rect = e.target.getBoundingClientRect();
