@@ -5,7 +5,11 @@
 }
 @font-face{
     font-family: 'Spartan';
-    src:url("./fonts/LeagueSpartan-VariableFont_wght.ttf");
+    src:url("./fonts/LeagueSpartan-ExtraLight.ttf");
+}
+@font-face{
+    font-family: 'SpartanBold';
+    src:url("./fonts/LeagueSpartan-SemiBold.ttf");
 }
 @font-face{
     font-family: 'PoiretOne';
@@ -17,9 +21,9 @@
 }
 body{
     background-color:rgba(235,235,235,1);
-    font-family:"Spartan",monospace;
-    font-weight:lighter;
-    font-size:1.1rem;
+    font-family:"Spartan";
+    font-weight:300;
+    font-size:1.3rem;
     min-height:calc(100vh - 98px);
 }
 .wrapper{
@@ -44,10 +48,10 @@ span{
     background-color:#2B2F2C;
     color:rgba(255,255,255,1);
     font-family:"Spartan",monospace;
-    font-size:0.8rem;
+    font-size:1rem;
     padding:0px;
-    padding-top:30px;
-    padding-bottom:30px;
+    padding-top:15px;
+    padding-bottom:15px;
     margin:0;
     width:100%;
     position:absolute;
@@ -87,7 +91,7 @@ a{
     font-size:min(20vw, 60px);
     font-family:"PoiretOne",cursive;
     text-align:center;
-    font-weight: 800;
+    font-weight: 300;
     z-index:101;
     width:100%;
     top:calc(50vh - min(20vw, 60px));
@@ -147,6 +151,7 @@ a{
     line-height:12mm;
     vertical-align: middle;
     font-family:"PoiretOne",cursive;
+    font-size:1.08rem;
     box-shadow:2px 2px 4px rgba(0,0,0,0.3);
     transition:all 0.3s;
 }
@@ -202,9 +207,14 @@ a{
     height:32mm;
 }
 .header-nm-button-pc{
+    line-height:12mm;
+    vertical-align: middle;
+    font-family:"PoiretOne",cursive;
+    font-weight:300;
+    font-size:1.08rem;
     height:12mm;
     position:fixed;
-    display:inline;
+    display:inline-block;
     text-align:left;
     width:32mm;
     transform:rotate(90deg);
@@ -212,9 +222,7 @@ a{
     z-index:90;
     top:4mm;
     color:rgba(255,255,255,1);
-    line-height:12mm;
     vertical-align: middle;
-    font-family:"PoiretOne",cursive;
     box-shadow:2px 2px 4px rgba(0,0,0,0.3);
     transition:all 0.3s;
 }
@@ -241,19 +249,17 @@ h1{
     text-align:center;
     position:relative;
     align-items:center;
-    font-weight:300;
     letter-spacing:8px;
-    font-family:"Spartan",cursive;
+    font-family:"SpartanBold",cursive;
 }
 
 h2{
-    font-size:2rem;
+    font-size:2.2rem;
     position:relative;
     margin-bottom:3mm;
     margin-top:2mm;
-    font-family:"Spartan",cursive;
+    font-family:"SpartanBold",cursive;
     letter-spacing:6px;
-    font-weight:600;
 }
 h2::before{
     content:"";
@@ -265,12 +271,11 @@ h2::before{
     left:0px;
  }
 h3{
-    font-size:2rem;
+    font-size:2.2rem;
     padding-bottom:10px;
     padding-top:70px;
     text-align:center;
-    font-family:"Spartan",cursive;
-    font-weight:600;
+    font-family:"SpartanBold";
     letter-spacing:5px;
 }
  .about-contents{
@@ -386,6 +391,9 @@ h3{
     padding-top:30px;
     margin-right:15vw;
  }
+ th{
+    font-weight:400;
+ }
  .career_table th{
      padding-right:20px;
      padding-bottom:0px;
@@ -396,6 +404,7 @@ h3{
  }
  .career_table_jpn td{
     font-family: "ZenKakuGothic", sans-serif;
+    font-size:1.05rem;
     padding-bottom:13px;
     padding-top:7px;
 }
@@ -416,7 +425,7 @@ h3{
     margin:auto;
     padding-bottom:60px;
     text-align:center;
-    font-family: "ZenKakuGothic", sans-serif;
+    font-family: "Spartan", sans-serif;
 }
 .typing_table_small{
     font-size:0.8rem;
@@ -434,13 +443,16 @@ h3{
 .works_txt{
     display:inline-block;
     width:45vw;
-    left:50%;
+    left:52%;
     position:absolute;
     top:0;
 }
 .txt_jpn{
     font-family: "ZenKakuGothic", sans-serif;
-    font-size:0.9rem;
+    font-size:1.05rem;
+}
+.txt_jpn_notAdjust{
+    font-family: "ZenKakuGothic", sans-serif;
 }
 .each_works:after{
     content:"";
@@ -528,10 +540,12 @@ h3{
     width:20mm;
     vertical-align:middle;
     padding:1mm;
-    margin-right:2mm;
+    padding-top:1.5mm;
+    padding-left:1.4mm;
+    margin-right:3mm;
     border-left: solid 6px #D9A223;
     white-space:nowrap;
-    font-size:0.7rem;
+    font-size:1rem;
     cursor:default;
 }
 .year{
@@ -559,7 +573,7 @@ h3{
 }
 .each_works_picture_wrapper{
     position:absolute;
-    right:50%;
+    right:48%;
     margin-right:30px;
 }
 .each_works_picture_wrapper:hover .each_works_picture_mask{
@@ -672,13 +686,6 @@ h3{
         margin:auto;
         left:0;
         right:0;
-        width:100%;
-        position:auto;
-        margin:0;
-        padding:0;
-        margin-top:2vw;
-        display:block;
-        position:relative;
     }
     .works_pic2{
         position:relative;
@@ -711,7 +718,7 @@ h3{
         margin-top:40px;
         text-align:center;
         border-left:none;
-        line-height:1.5em;
+        line-height:1.5rem;
     }
     .typingLink{
         text-align:center;
@@ -768,7 +775,6 @@ h3{
         padding-top:0;
     }
     .each_works{
-        width:70vw;
         height:auto;
         left:0;
         right:0;
