@@ -3,7 +3,8 @@ var animationcnt=0; //アニメーションのカウンター 1でスタート -
 var lastPerformance=performance.now(); //パフォーマンス
 var t = 0; //開いてからの経過時間 ミリ秒
 var INIT_TIME;
-const TITLE_TEXT=[["I'm here","to", "innovate."]];
+const TITLE_TEXT="I'm here+to+innovate";
+const TITLE_BRPOS=[9,11];
 const DETAIL_TEXT="Hello, this page is a portfolio of toruthi. I am developer, composer, and typist.";
 const TITLE_MAX_LENGTH = 7;
 const MONOS_FONTNAME="Red Hat Mono, monospace";
@@ -24,11 +25,22 @@ document.getElementById("prev_buttons1").addEventListener('click',function(event
     document.getElementById("fadeinCanvas2").style.zIndex=999;
     event.preventDefault()
 })
-document.getElementById("detail_exp").textContent=DETAIL_TEXT;
+document.getElementById("detail_exp").innerHTML=DETAIL_TEXT;
 window.addEventListener('load', function(){ ///ロードイベント登録
     INIT_TIME=performance.now();
     init();
 });
+
+window.addEventListener("keypress",function(e){//キー入力
+    if(e.keyCode==8){
+        if(this.document.getElementById("greetingText").innerHTML.length > 18){
+            this.document.getElementById("greetingText").innerHTML= this.document.getElementById("greetingText").innerHTML.substr(0, this.document.getElementById("greetingText").innerHTML.length-1);
+        }
+    } else if((" .,*".indexOf(e.key) != -1 || (e.keyCode>=65 && e.keyCode<= 90)||(e.keyCode>=97 && e.keyCode<= 122)) && this.document.getElementById("greetingText").clientWidth< this.document.getElementById("greetingBack").clientWidth){
+        this.document.getElementById("greetingText").innerHTML+=e.key;
+    }
+})
+
 window.addEventListener('mousemove', function (e) { //マウスが動いた時
     var rect = e.target.getBoundingClientRect();
 	mouseX = e.clientX;
@@ -160,20 +172,17 @@ function init() {
         var drawTxt=TITLE_TEXT[0][2];
 
         var rectSize=Math.min(document.getElementById("myCanvas").width*0.7,document.getElementById("myCanvas").height-180);
-        var FONT_SIZE=rectSize/7;
-
-        for(var i = 0;i < 3;i++){
-            var titleTempSum=0;
-            if(i>=1) titleTempSum+=TITLE_TEXT[showMsgNum][0].length;
-            if(i>=2) titleTempSum+=TITLE_TEXT[showMsgNum][1].length;
-            drawTxt=TITLE_TEXT[showMsgNum][i].substr(0,Math.max(0,Math.floor(t*13)-titleTempSum));
-            inputChar=String.fromCharCode(65+Math.floor(Math.random()*25));
-            document.getElementById("greetingText" + (i+1)).textContent=drawTxt;
+        
+        if(t<3){
+            drawTxt=TITLE_TEXT.substr(0,Math.max(0,Math.floor(t*10)-0));
+            drawTxt=drawTxt.replace("+","<br>").replace("+","<br>");
+            document.getElementById("greetingText").innerHTML=drawTxt;    
         }
-//Mouse Cursor
+
+        //Mouse Cursor
         prevMouseX=(2*prevMouseX+mouseX)/3;
         prevMouseY=(2*prevMouseY+mouseY)/3;
-        
+        document.getElementById("typingCursor").style.opacity=Math.sin(t*10)*0.5+0.5;
         if(!(navigator.userAgent.match(/(iPhone|iPad|iPod|Android)/i))){ //if agent is PC 
             ctx2d.strokeStyle="rgba(225,220,200,"+(0.4+0.3*Math.sin(t*10))+")";
             ctx2d.fillStyle="rgba(0,0,0,0.2)";
