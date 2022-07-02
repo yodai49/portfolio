@@ -335,10 +335,10 @@ h3{
     padding-bottom:110px;
     background-color:#B5B7AA;
     background-image:  
-    linear-gradient(90deg, rgba(181,183,170,0.8) 50%, transparent 0%), 
-    linear-gradient(0deg, rgba(178,180,167,0.8) 50%, transparent 0%);
-    background-position:  2px 0, 2px 0, 0 0, 0 0;
-    background-size: 2px 2px;
+    linear-gradient(90deg, rgba(176,180,165,0.8) 50%, transparent 0%), 
+    linear-gradient(0deg, rgba(181,185,170,0.8) 50%, transparent 0%);
+    background-position:  3px 0, 3px 0, 0 0, 0 0;
+    background-size: 3px 3px;
     background-repeat: repeat;
 
     -webkit-clip-path: polygon(0 150px, 100% 0, 100% 100%, 0 100%);
@@ -515,7 +515,8 @@ h3{
 .vertical_border_new{
     height:200px;
     width:100vw;
-    margin-top:0px;
+    padding-top:100px;
+    padding-bottom:100px;
     position:relative;
     margin-bottom:0px;
 }
@@ -540,9 +541,10 @@ h3{
     background-color:#D4C6A8;
     width:20mm;
     vertical-align:middle;
-    padding:1mm;
+    padding-right:1mm;
     padding-top:1.5mm;
     padding-left:1.4mm;
+    padding-bottom:0.7mm;
     margin-right:3mm;
     border-left: solid 6px #D9A223;
     white-space:nowrap;
@@ -605,6 +607,7 @@ h3{
     min-width:440px;
     vertical-align:bottom;
     background-color:#B5B7AA;
+    min-width:auto;
 }
 .loading{
     position:fixed;
@@ -643,7 +646,7 @@ h3{
         width:100vw;
         margin:0;
         padding:0;
-        font-size:max(18px, 2vh);
+        font-size:max(16px, 2vh);
     }
     body{
         margin:0;
@@ -676,7 +679,6 @@ h3{
         height:auto;
         padding-left:1ch;
         padding-right:1ch;
-        padding-bottom:70px;
     }
     .mypic{
         width:50vw;
@@ -742,17 +744,24 @@ h3{
         margin-right:0px;
         width:90vw;
         padding:0;
-        padding-top:80px;
+        padding-top:55px;
         left:5vw;
      }
     .typing_score_table td{
         border-bottom: solid 2px #aaaaaa;
         padding-left:5px;
     }
+    .career_typing-dtl{
+        display:none;
+    }
+    .career_table td{
+        padding-bottom:2px;
+        padding-top:2px;
+    }
     .career_table_jpn td{
         font-family: "ZenKakuGothic", sans-serif;
-        padding-bottom:15px;
-        padding-top:5px;
+        padding-bottom:5px;
+        padding-top:0px;
     }
     
     .typing_score_table th{
@@ -765,6 +774,7 @@ h3{
         padding:0;
         text-align:center;
         font-family: "ZenKakuGothic", sans-serif;
+        font-size:1rem;
     }
     .iframe-songs{
         padding:0;
@@ -832,16 +842,6 @@ h3{
     }
     .before-black:before{
         background-color:#000000;
-    }
-    .tag{
-        color:#000;
-        text-align:center;
-        position:relative;
-        left:0;
-        right:0;
-        margin:auto;
-        padding:0.4ch;
-        margin-top:1ch;
     }
     .header-button-pc{
         display:none;
