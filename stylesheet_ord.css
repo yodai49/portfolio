@@ -604,7 +604,6 @@ h3{
 }
 .works_pic2{
     width:38vw;
-    min-width:440px;
     vertical-align:bottom;
     background-color:#B5B7AA;
     min-width:auto;
@@ -729,6 +728,13 @@ h3{
     .typingHandle{
         text-align:left;
     }
+    .tag{
+        display:inline-block;
+        white-space:nowrap;
+        width:auto;
+        padding-top 0;
+        padding-bottom:0;
+    }
     .career_typing{
         color:rgba(0,0,0,1);
         width:100%;
@@ -741,11 +747,9 @@ h3{
         text-align:left;
         margin:0;
         margin-left:5vw;
-        margin-right:0px;
         width:90vw;
         padding:0;
         padding-top:55px;
-        left:5vw;
      }
     .typing_score_table td{
         border-bottom: solid 2px #aaaaaa;
