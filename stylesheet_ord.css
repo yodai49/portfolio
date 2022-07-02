@@ -554,7 +554,7 @@ h3{
 .year{
     color:#999999;
     margin:2mm;
-}
+}７
 .iframe-songs{
     padding-left:6%;
     width:40%;
@@ -797,8 +797,8 @@ h3{
     }
     .year{
         text-align:center;
-        padding-top:0px;
-        padding-bottom:0px;
+        margin-top:-5px;
+        padding-bottom:5px;
     }
     .vertical_border{
         display:none;

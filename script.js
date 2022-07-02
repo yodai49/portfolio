@@ -141,7 +141,7 @@ function init() {
         if(nextPage!=""){ //遷移時
             let t2=performance.now()-nextPageLP;
             fadein2d2.fillStyle="rgba(0,0,0," +(t2/1000)+")";
-            fadein2d2.fillRect(0,0,canvasWidth*(t2/2000),canvasHeight);
+            fadein2d2.fillRect(0,0,canvasWidth*(t2/1000),canvasHeight);
             if(t2 > 1000) {
                 nextPage=localStorage.getItem("nextPage");
                 nextPageLP=-1;
