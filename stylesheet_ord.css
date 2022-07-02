@@ -732,8 +732,12 @@ h3{
         display:inline-block;
         white-space:nowrap;
         width:auto;
-        padding-top 0;
+        padding-top :0;
         padding-bottom:0;
+        height:auto;
+        margin:0;
+        margin-left:8px;
+        margin-top:5px;
     }
     .career_typing{
         color:rgba(0,0,0,1);
