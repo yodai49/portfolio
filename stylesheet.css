@@ -142,7 +142,7 @@ span{
     padding-right:20px;
 }
 .twitter_logo{
-    padding-bottom:23px;
+    padding-bottom:26px;
 }
 .mail_logo{
     padding-bottom:23px;
@@ -154,13 +154,14 @@ span{
     padding-bottom:39px;
 }
 .mail_logo:hover{
-    padding-bottom:39px;
+    padding-bottom:43px;
 }
 .github_logo:hover{
     padding-bottom:42px;
 }
 .logos{
     width:36px;
+    height:auto;
     position:relative;
     bottom:0;
     z-index:10;
@@ -205,6 +206,15 @@ span{
 @media (max-width:1020px) { /* For smartphone*/
     *{
         font-size:2vh;
+    }
+    .twitter_logo:hover{
+        padding-bottom:26px;
+    }
+    .mail_logo:hover{
+        padding-bottom:23px;
+    }
+    .github_logo:hover{
+        padding-bottom:25px;
     }
 	.bt-mobile {
 		display: inline;
