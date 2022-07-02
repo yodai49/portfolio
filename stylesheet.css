@@ -138,7 +138,7 @@ span{
     padding-right:20px;
 }
 .twitter_logo{
-    padding-bottom:26px;
+    padding-bottom:23px;
 }
 .mail_logo{
     padding-bottom:23px;
@@ -147,7 +147,7 @@ span{
     padding-bottom:25px;
 }
 .twitter_logo:hover{
-    padding-bottom:42px;
+    padding-bottom:39px;
 }
 .mail_logo:hover{
     padding-bottom:39px;
@@ -156,7 +156,7 @@ span{
     padding-bottom:42px;
 }
 .logos{
-    width:max(36px,4vh);
+    width:36px;
     position:relative;
     bottom:0;
     z-index:10;
